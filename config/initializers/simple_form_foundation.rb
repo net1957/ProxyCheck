@@ -90,7 +90,7 @@ SimpleForm.setup do |config|
       ba.use :label_input
     end
 
-    b.use :error, wrap_with: { tag: :small, class: :error}
+    b.use :error, wrap_with: { tag: :small, class: :error }
     # b.use :hint,  wrap_with: { tag: :span, class: :hint }
   end
 

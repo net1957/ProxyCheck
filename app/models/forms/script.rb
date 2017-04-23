@@ -1,6 +1,7 @@
 require 'ipaddr'
 
 module Forms
+  # hold the interface to PoxyPacRb
   class Script
     include ActiveModel::Model
 
@@ -32,9 +33,8 @@ module Forms
     end
 
     def p_script(ip = nil)
-      env = ip.blank? ?  ProxyPacRb::Environment.new : ProxyPacRb::Environment.new(client_ip: ip)
+      env = ip.blank? ? ProxyPacRb::Environment.new : ProxyPacRb::Environment.new(client_ip: ip)
       @script = ProxyPacRb::Parser.new(environment: env).parse(name)
-      #@script = Smash.new(script: name, valid: true, invalid: false, parse: name)
     end
 
     # validate that ip is a valid IPV4 address
