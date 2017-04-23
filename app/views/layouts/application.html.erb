@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title><%= content_for?(:title) ? yield(:title) : 'Proxy Check' %></title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+</head>
+
+<body>
+<div class="top-bar">
+  <div class="top-bar-title">
+    <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+      <button class="menu-icon" type="button" data-toggle></button>
+    </span>
+    <%= link_to image_tag('logo.png') + '&nbsp;&nbsp;'.html_safe + "Proxy Check#{top_suffix}", root_path %>
+  </div>
+  <div id="responsive-menu">
+    <%= render 'shared/top_menu' %>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="large-12 columns" id="msg">
+    <%= render 'shared/messages' %>
+  </div>
+</div>
+<%= yield %>
+<div id="myModalErr" class="reveal small" data-reveal>
+  <span class="modalErrText">
+  </span>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
+
+</body>
+</html>

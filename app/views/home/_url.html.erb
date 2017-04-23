@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-section">
+    <%= simple_form_for @script, remote: true, url: url_path, html: { id: 'url-form' } do |f| %>
+        <div class="form-inputs">
+          <!--<%= f.error_notification %>-->
+          <%= f.hidden_field :ip, required: false %>
+          <%= f.hidden_field :name, required: false %>
+          <%= f.hidden_field :action, required: false %>
+          <%= f.input :url, as: :text, label: 'URL(s)', placeholder: 'URL(s) to validate', required: true %>
+          <small>* mandatory field</small>
+        </div>
+        <div class="form-actions button-group">
+          <%= f.button :submit, 'Run', id: 'run', data: { disable_with: 'Wait...' }, class: '' %>
+          <input type="reset" value="Reset" class="button small secondary">
+          <button id="reset" class="button small secondary">Clear results</button>
+        </div>
+    <% end %>
+    <hr>
+    <table id="result">
+      <thead>
+      <tr>
+        <td>Url</td>
+        <td>Proxy used</td>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</div>

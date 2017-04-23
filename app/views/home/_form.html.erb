@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-divider">
+    <h5 class="text-center">Client details</h5>
+  </div>
+  <div class="card-section">
+    <%= simple_form_for @script, remote: true, url: script_path, html: { id: 'top-form' } do |f| %>
+        <div class="form-inputs">
+          <%= f.error_notification %>
+          <%= f.input :ip, label: 'IP', placeholder: 'Client IP', required: false %>
+          <%= f.input :name, as: :text, label: 'Script or script URL', placeholder: 'Script or url', required: true %>
+          <%= f.hidden_field :action, required: false %>
+          <small>* mandatory field</small>
+        </div>
+        <div class="form-actions button-group">
+          <%= f.button :submit, 'Validate', id: 'validate', data: { disable_with: 'Wait...' }, class: 'expand' %>
+          <%= f.button :submit, 'Compress', id: 'compress', data: { disable_with: 'Wait...' }, class: 'expand' %>
+        </div>
+    <% end %>
+  </div>
+</div>
