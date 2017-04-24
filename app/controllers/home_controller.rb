@@ -3,7 +3,7 @@
 # Manage home page
 class HomeController < ApplicationController
   def index
-    @script = Forms::Script.new
+    @script = Forms::Script.new(ip: request.remote_ip)
   end
 
   def script
