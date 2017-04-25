@@ -29,12 +29,12 @@ module Forms
     private
 
     def script_valid?
-      errors.add(:name, :invalid) unless p_script(ip).valid
+      errors.add(:name, script.message) unless p_script(ip).valid
     end
 
     def p_script(ip = nil)
       env = ip.blank? ? ProxyPacRb::Environment.new : ProxyPacRb::Environment.new(client_ip: ip)
-      @script = ProxyPacRb::Parser.new(environment: env).parse(name)
+      @script = ProxyPacRb::Parser.new(environment: env).parse(name).tap { |script| Rails.logger.debug { script.inspect } }
     end
 
     # validate that ip is a valid IPV4 address
