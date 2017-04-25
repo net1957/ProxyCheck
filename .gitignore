@@ -20,9 +20,9 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-secrets.yml
+#secrets.yml
 config.yml
-database.yml
+#database.yml
 doc
 .idea
 rubocop.txt
