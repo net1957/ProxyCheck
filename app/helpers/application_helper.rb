@@ -1,5 +1,5 @@
 module ApplicationHelper
   def top_suffix
-    "-#{Rails.env}"
+    "-#{Rails.env}" unless Rails.env.production?
   end
 end

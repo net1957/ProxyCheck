@@ -3,18 +3,39 @@
     <h5 class="text-center">Client details</h5>
   </div>
   <div class="card-section">
-    <%= simple_form_for @script, remote: true, url: script_path, html: { id: 'top-form' } do |f| %>
+    <%= simple_form_for @script, remote: true, url: script_path, html: { id: 'url_form' } do |f| %>
         <div class="form-inputs">
           <%= f.error_notification %>
-          <%= f.input :ip, label: 'IP', placeholder: 'Client IP', required: false %>
           <%= f.input :name, as: :text, label: 'Script or script URL', placeholder: 'Script or url', required: true %>
+          <%= f.input :ip, label: 'IP', placeholder: 'Client IP', required: false %>
+          <%= f.input :url, as: :text, label: 'URL(s)', placeholder: 'URL(s) to validate', required: false %>
           <%= f.hidden_field :action, required: false %>
           <small>* mandatory field</small>
-        </div>
-        <div class="form-actions button-group">
-          <%= f.button :submit, 'Validate', id: 'validate', data: { disable_with: 'Wait...' }, class: 'expand' %>
-          <%= f.button :submit, 'Compress', id: 'compress', data: { disable_with: 'Wait...' }, class: 'expand' %>
+          <div class="form-actions button-group clearfix">
+            <%= f.button :submit, 'Run', id: 'url', data: { disable_with: 'Wait...' } %>
+            <button id="clear" class="button small secondary">Clear URL(s)</button>
+            <button id="reset" class="button small secondary">Clear results</button>
+            <%= f.button :submit, 'Compress script', id: 'compress', data: { disable_with: 'Wait...' }, class: 'secondary float-right' %>
+          </div>
         </div>
     <% end %>
+  </div>
+  <div class="results hide">
+    <div class="card-divider">
+      <hr>
+      <h5 class="text-center">Results</h5>
+    </div>
+    <div class="card-section">
+      <table id="result">
+        <thead>
+        <tr>
+          <td>Url</td>
+          <td>Proxy used</td>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

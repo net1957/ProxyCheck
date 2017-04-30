@@ -8,31 +8,27 @@ class HomeController < ApplicationController
 
   def script
     @script = Forms::Script.new(script_params)
-    if @script.invalid?
-      render inline: "$('#form').html('<%= j (render 'form.html') %>').foundation();", content_type: 'text/javascript'
-
-    elsif script_params[:action] == 'compress'
-      render json: { parse: @script.compress }
+    if @script.valid?
+      result(script_params[:action])
     else
-      render inline: "$('#form').html('<%= j (render 'urls.html') %>').foundation();", content_type: 'text/javascript'
+      render inline: "$('#form').html('<%= j (render 'form.html') %>').foundation();", content_type: 'text/javascript'
     end
   end
 
-  def url
-    @script = Forms::Script.new(script_params)
-    if @script.invalid?
-      render inline: "$('#form').html('<%= j (render 'form.html') %>').foundation();", content_type: 'text/javascript'
+  # private
+
+  def result(action)
+    case action
+    when 'compress' then
+      render json: { response: @script.compress }
+    when 'url' then
+      render json: { response: script_params[:url].split.each_with_object([]) { |url, a| a << { url: url, result: @script.find_proxy(url) } } }
     else
-      urls = script_params[:url].split
-      render json: urls.each_with_object([]) { |url, a| a << { url: url, result: @script.find_proxy(url) } }
+      render json: { error: true }
     end
   end
 
   def script_params
     params.require(:forms_script).permit(:ip, :name, :action, :url)
-  end
-
-  def url_params
-    params.require(:forms_url).permit(:url, :ip, :name, :action)
   end
 end

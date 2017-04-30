@@ -8,10 +8,10 @@ module Forms
     attr_accessor :ip, :name, :action, :url
     attr_reader :script
 
-    validate :script_valid?
-    validates :name, presence: true
-    validates :action, inclusion: { in: %w[validate compress] }
     validate :ip_valid?
+    validates :name, presence: true
+    validates :action, inclusion: { in: %w[validate compress url] }
+    validate :script_valid?, if: :ip_valid?
 
     def call
       return false if invalid?

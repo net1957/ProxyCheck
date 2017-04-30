@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :home, only: [:index]
 
   post '/script' => 'home#script', as: :script
-  post '/run' => 'home#url', as: :url
 
   root 'home#index'
 end
