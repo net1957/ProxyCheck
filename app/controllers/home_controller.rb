@@ -11,7 +11,7 @@ class HomeController < ApplicationController
     if @script.valid?
       result(script_params[:action])
     else
-      # render
+      render
     end
   end
 
