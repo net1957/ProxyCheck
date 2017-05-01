@@ -13,12 +13,8 @@ module Forms
     validates :action, inclusion: { in: %w[validate compress url] }
     validate :script_valid?, if: :ip_valid?
 
-    def call
-      return false if invalid?
-    end
-
     # @return [String] script result for url and ip
-    def find_proxy(url)
+    def proxy(url)
       script.find(url)
     end
 
@@ -38,7 +34,7 @@ module Forms
     end
 
     # validate that ip is a valid IPV4 address
-    # @return [Object] ip as validated string or false
+    # @return [Object] ip as validated string, false or true if blank
     def ip_valid?
       return true if ip.blank?
       IPAddr.new(ip.strip, Socket::AF_INET).to_s

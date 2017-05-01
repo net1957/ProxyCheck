@@ -22,7 +22,7 @@ class HomeController < ApplicationController
     when 'compress' then
       render json: { response: @script.compress }
     when 'url' then
-      render json: { response: script_params[:url].split.each_with_object([]) { |url, a| a << { url: url, result: @script.find_proxy(url) } } }
+      render json: { response: script_params[:url].split.each_with_object([]) { |url, a| a << { url: url, result: @script.proxy(url) } } }
     else
       render json: { error: true }
     end
