@@ -11,7 +11,7 @@ class HomeController < ApplicationController
     if @script.valid?
       result(script_params[:action])
     else
-      render inline: "$('#form').html('<%= j (render 'form.html') %>').foundation();", content_type: 'text/javascript'
+      # render
     end
   end
 
