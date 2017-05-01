@@ -4,26 +4,23 @@
   </div>
   <div class="card-section">
     <%= simple_form_for @script, remote: true, url: script_path, html: { id: 'url_form' } do |f| %>
-        <div class="form-inputs">
+        <div class="form-inputs clearfix">
           <%= f.error_notification %>
-          <%= f.input :name, as: :text, label: 'Script or script URL', placeholder: 'Script or url', required: true %>
+          <%= f.input :name, as: :text, label: 'Script or script URL<input id="compress" class="hide button tiny secondary no-margin float-right" data-disable-with="Wait..." value="Compress script" type="submit">'.html_safe, placeholder: 'Script or url', required: true %>
           <%= f.input :ip, label: 'IP', placeholder: 'Client IP', required: false %>
-          <%= f.input :url, as: :text, label: 'URL(s)', placeholder: 'URL(s) to validate', required: false %>
+          <%= f.input :url, as: :text, label: 'URL(s)<button id="clear" class="hide button tiny secondary no-margin float-right">Clear</button>'.html_safe, placeholder: 'URL(s) to validate', required: false %>
           <%= f.hidden_field :action, required: false %>
           <small>* mandatory field</small>
           <div class="form-actions button-group clearfix">
             <%= f.button :submit, 'Run', id: 'url', data: { disable_with: 'Wait...' } %>
-            <button id="clear" class="button small secondary">Clear URL(s)</button>
-            <button id="reset" class="button small secondary">Clear results</button>
-            <%= f.button :submit, 'Compress script', id: 'compress', data: { disable_with: 'Wait...' }, class: 'secondary float-right' %>
           </div>
         </div>
     <% end %>
   </div>
   <div class="results hide">
-    <div class="card-divider">
+    <div class="card-divider clearfix">
       <hr>
-      <h5 class="text-center">Results</h5>
+      <h5 class="text-center">Results<button id="reset" class="button tiny secondary float-right">Clear results</button></h5>
     </div>
     <div class="card-section">
       <table id="result">
