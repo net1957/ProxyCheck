@@ -36,7 +36,7 @@ $('#form').on 'change', '#forms_script_ip', (event) ->
   clear_results()
 
 $('#form').on 'change', (event) ->
-  all_visibility
+  all_visibility()
 
 $('#form').on 'ajax:success', '#url_form', (event, data, status, xhr) ->
   return if data.error
