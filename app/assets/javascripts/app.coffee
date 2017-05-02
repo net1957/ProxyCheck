@@ -5,8 +5,9 @@ clear_results = ->
 name_compress_visibility = ->
   if $('#forms_script_name').val().trim() == ''
     $('#compress').addClass('hide')
-  else
-    $('#compress').removeClass('hide')
+# TODO: need proxy_rb_pac >0.5.4 see commit d8e3d73
+#  else
+#    $('#compress').removeClass('hide')
 
 url_clear_visibility = ->
   if $('#forms_script_url').val().trim() == ''
@@ -18,8 +19,10 @@ all_visibility = ->
  url_clear_visibility()
  name_compress_visibility()
 
+# allow access from other scripts
 window.all_visibility = -> all_visibility()
 
+# at startup
 $ ->
   all_visibility()
 
