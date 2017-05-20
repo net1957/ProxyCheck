@@ -10,7 +10,7 @@ module Forms
 
     validate :ip_valid?
     validates :name, presence: true
-    validates :action, inclusion: { in: %w[validate compress url] }
+    validates :action, inclusion: { in: %w[compress url] }
     validate :script_valid?, if: :ip_valid?
 
     # @return [String] script result for url and ip
