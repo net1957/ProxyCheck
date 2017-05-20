@@ -16,7 +16,7 @@ SimpleForm.setup do |config|
     b.optional :min_max
     b.optional :readonly
     b.use :label_input
-    b.use :error, wrap_with: { tag: :small, class: [:error, :label, :alert] }
+    b.use :error, wrap_with: { tag: :small, class: %i[error label alert] }
 
     # b.use :hint,  wrap_with: { tag: :span, class: :hint }
   end
@@ -46,7 +46,7 @@ SimpleForm.setup do |config|
     b.optional :readonly
 
     b.wrapper :container_wrapper, tag: 'div', class: 'small-offset-3 small-9 columns' do |ba|
-      ba.wrapper :tag => 'label', :class => 'checkbox' do |bb|
+      ba.wrapper tag: 'label', class: 'checkbox' do |bb|
         bb.use :input
         bb.use :label_text
       end
