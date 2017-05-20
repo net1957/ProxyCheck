@@ -31,7 +31,7 @@ module Forms
     def p_script(ip = nil)
       env = ip.blank? ? ProxyPacRb::Environment.new : ProxyPacRb::Environment.new(client_ip: ip)
       @script = ProxyPacRb::Parser.new(environment: env).parse(name)
-                                  .tap { |script| Rails.logger.debug { script.inspect } }
+      #                            .tap { |script| Rails.logger.debug { script.inspect } }
     end
 
     # validate that ip is a valid IPV4 address
