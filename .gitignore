@@ -32,3 +32,5 @@ git_version
 .vagrant
 
 /app/assets/images/logo.png
+
+node_modules/

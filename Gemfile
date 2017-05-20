@@ -23,7 +23,7 @@ gem 'hashie', '~>3.0'
 gem 'sdoc'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.2'
+gem 'rails', '5.1.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
@@ -56,6 +56,8 @@ group :development, :test do
 end
 
 group :development do
+  # To find changes
+  gem 'listen'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   # Use Puma as the app server
