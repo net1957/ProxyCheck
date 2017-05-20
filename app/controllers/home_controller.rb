@@ -15,7 +15,7 @@ class HomeController < ApplicationController
     end
   end
 
-  # private
+  private
 
   def result(action)
     case action
