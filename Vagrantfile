@@ -78,7 +78,7 @@ Vagrant.configure('2') do |config|
      # for yarn repository
      curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
      echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-     # 
+     # end yarn repository
      sudo apt-get update
 	   sudo apt-get -y dist-upgrade
 	   sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
@@ -87,7 +87,7 @@ Vagrant.configure('2') do |config|
 	   sudo gem update --system --no-doc
 	   sudo gem install bundler --no-doc
      sudo apt-get install -y nodejs
-     sudo apt-get install -y yarn        
+     sudo apt-get install -y yarn
      sudo apt-get autoremove -y
   SHELL
 end
