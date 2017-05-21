@@ -189,7 +189,6 @@ DEPENDENCIES
   hashie (~> 3.0)
   jquery-rails
   proxy_pac_rb (>= 3.0)
-
   puma (~> 3.0)
   rails (= 5.1.1)
   sass-rails (~> 5.0)
