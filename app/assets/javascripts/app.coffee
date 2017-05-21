@@ -6,8 +6,8 @@ name_compress_visibility = ->
   if $('#forms_script_name').val().trim() == ''
     $('#compress').addClass('hide')
 # TODO: need proxy_rb_pac >0.5.4 see commit d8e3d73
-#  else
-#    $('#compress').removeClass('hide')
+  else
+    $('#compress').removeClass('hide')
 
 url_clear_visibility = ->
   if $('#forms_script_url').val().trim() == ''
