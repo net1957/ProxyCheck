@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :home, only: [:index]
+  resource :scripts, only: [:new, :create]
 
-  post '/script' => 'home#script', as: :script
-
-  root 'home#index'
+  root 'scripts#new'
 end

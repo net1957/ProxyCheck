@@ -3,7 +3,7 @@
     <h5 class="text-center">Client details</h5>
   </div>
   <div class="card-section">
-    <%= simple_form_for @script, remote: true, url: script_path, html: { id: 'url_form' } do |f| %>
+    <%= simple_form_for @script, remote: true, url: scripts_path, html: { id: 'url_form' } do |f| %>
         <div class="form-inputs clearfix">
           <%= f.error_notification %>
           <%= f.input :name, as: :text, label: 'Script or script URL<input id="compress" class="hide button tiny secondary no-margin float-right" data-disable-with="Wait..." value="Compress script" type="submit">'.html_safe, placeholder: 'Script or url', required: true %>
