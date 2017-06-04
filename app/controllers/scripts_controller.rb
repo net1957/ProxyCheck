@@ -20,14 +20,10 @@ class ScriptsController < ApplicationController
     when 'compress'
       render json: { response: script.compress }
     when 'url'
-      render json: { response: url_response }
+      render json: { response: script.proxies }
     else
       render json: { error: true }
     end
-  end
-
-  def url_response
-    script_params[:url].split.each_with_object([]) { |url, a| a << { url: url, result: script.proxy(url) } }
   end
 
   def script_params
