@@ -13,7 +13,7 @@ gem 'proxy_pac_rb', '>= 3.0'
 gem 'therubyracer'
 
 # for forms
-gem 'foundation-rails', '~>6.0'
+gem 'foundation-rails', '~>6.3.0'
 gem 'simple_form', '~>3.0'
 
 # to access configuration
