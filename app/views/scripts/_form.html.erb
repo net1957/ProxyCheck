@@ -7,7 +7,7 @@
         <div class="form-inputs clearfix">
           <%= f.error_notification %>
           <%= f.input :name, as: :text, label: 'Script or script URL<input id="compress" class="hide button tiny secondary no-margin float-right" data-disable-with="Wait..." value="Compress script" type="submit">'.html_safe, placeholder: 'Script or url', required: true %>
-          <%= f.input :ip, label: 'IP', placeholder: 'Client IP', required: false %>
+          <%= f.input :ip, label: 'IP', placeholder: 'Client IP (default to 127.0.0.1)', required: false %>
           <%= f.input :url, as: :text, label: 'URL(s)<button id="clear" class="hide button tiny secondary no-margin float-right">Clear</button>'.html_safe, placeholder: 'URL(s) to validate', required: false %>
           <%= f.hidden_field :action, required: false %>
           <small>* mandatory field</small>
