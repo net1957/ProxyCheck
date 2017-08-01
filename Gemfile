@@ -7,7 +7,9 @@ git_source(:github) do |repo_name|
 end
 
 # for proxy
-gem 'proxy_pac_rb', github: 'net1957/proxy_pac_rb', branch: 'Rails5.1'
+# gem 'proxy_pac_rb', github: 'net1957/proxy_pac_rb', branch: 'Rails5.1'
+gem 'proxy_pac_rb', '>= 3.0'
+
 gem 'therubyracer'
 
 # for forms
