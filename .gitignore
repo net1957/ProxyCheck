@@ -30,4 +30,5 @@ rubocop.txt
 brakeman.*
 git_version
 .vagrant
-Vagrantfile
+
+/app/assets/images/logo.png
