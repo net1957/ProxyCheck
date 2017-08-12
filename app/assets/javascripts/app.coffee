@@ -5,7 +5,6 @@ clear_results = ->
 name_compress_visibility = ->
   if $('#forms_script_name').val().trim() == ''
     $('#compress').addClass('hide')
-# TODO: need proxy_rb_pac >0.5.4 see commit d8e3d73
   else
     $('#compress').removeClass('hide')
 
@@ -53,6 +52,16 @@ $('#form').on 'ajax:success', '#url_form', (event, data, status, xhr) ->
     $('#form').foundation()
   $('#form .alert').hide()
   url_clear_visibility()
+
+# Errors on request
+$('#form').on 'ajax:error', (event, xhr, status, error)->
+  $('.modalErrText').html('<p class="lead">Unexpected error occured.</p><p>Please close and try again.</p>')
+  $('#myModalErr').foundation('open')
+
+# Redirect after closing modal form
+$('#myModalErr.button.close-button').on 'click', ->
+  # Redirect to root after closing modal
+  window.location.href = '/'
 
 $('#form').on 'click', '#reset', (event) ->
   event.preventDefault()
