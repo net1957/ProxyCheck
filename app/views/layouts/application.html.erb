@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta charset="utf-8"/>
@@ -12,24 +12,23 @@
 </head>
 
 <body>
-<div class="top-bar">
-  <div class="top-bar-title">
-    <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-      <button class="menu-icon" type="button" data-toggle></button>
-    </span>
-    <%= link_to image_tag(top_logo) + '&nbsp;&nbsp;'.html_safe + "Proxy Check#{top_suffix}", root_path %>
-  </div>
-  <div id="responsive-menu">
-    <%= render 'shared/top_menu' %>
-  </div>
+<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+  <div class="title-bar-title">Menu&nbsp<%= link_to image_tag(top_logo), root_path %></div>
+</div>
+<div class="top-bar" id="responsive-menu">
+  <%= render 'shared/top_menu' %>
 </div>
 <br>
+
 <div class="row">
   <div class="large-12 columns" id="msg">
     <%= render 'shared/messages' %>
   </div>
 </div>
+
 <%= yield %>
+
 <div id="myModalErr" class="reveal small" data-reveal>
   <span class="modalErrText">
   </span>

@@ -1,17 +1,23 @@
 // project specifics
 
-.hide {
-    display: none;
-}
-
-.very-small {
-  font-size: 60%;
-}
-
-.top-bar form .input-group {
-  margin-bottom : 0;
-}
-
 .no-margin {
   margin: 0 0 0 !important;
+}
+
+@import 'settings';
+@import 'foundation';
+
+// to avoid double menu during page load
+.no-js {
+  @include breakpoint(small only) {
+    .top-bar {
+      display: none;
+    }
+  }
+
+  @include breakpoint(medium) {
+    .title-bar {
+      display: none;
+    }
+  }
 }
