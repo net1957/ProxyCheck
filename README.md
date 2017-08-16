@@ -19,8 +19,8 @@ Node.js, Yarn, Git and Ruby 2.3 or higher should be installed on the system.
 
 Clone this repository and install gems:
 ````
-git clone https://github.com/net1957/proxyCheck.git
-cd proxyCheck
+git clone https://github.com/net1957/ProxyCheck.git
+cd ProxyCheck
 bundle install
 rake git_version
 ````
@@ -52,7 +52,7 @@ rails server
 ````
 
 Connect to your application with your URL (default to http://localhost:3000) and you have three input fields:
-* Script or script URL: you can put the source of your script or the URL of the script (the same as in your navigator).
+* Script or script URL: you can put the source of your script or the URL of the script (the same as in your navigator). The server that host ProxyCheck must have access to the URL.
 * Client IPv4: the IP of your client. Default to the IP seen by the server.
 * URL(s): you can add one or many URL to check, one per line.
 
