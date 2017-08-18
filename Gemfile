@@ -17,9 +17,6 @@ gem 'simple_form', '~>3.0'
 # to access configuration
 gem 'hashie', '~>3.0'
 
-# for doc
-gem 'sdoc'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.1.3'
 
