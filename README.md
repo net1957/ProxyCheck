@@ -35,13 +35,23 @@ CONFIGURATION
 
 All Rails configuration apply, but no database is used, so activerecord is disabled. See config/application.rb file for details.
 
-You can use your own logo on the top of the page (optional).
 
-Simply put a png file (159*18 pixels) in app/assets/images directory and set the environment variable LOGO with the filename (without path).
+1. You can use your own logo on the top of the page (optional).
 
-example:
+   Simply put a png file (159*18 pixels) in app/assets/images directory and set the environment variable LOGO with the filename (without path).
+
+   example:
 ````
 LOGO=mylogo.png
+````
+
+2. you can hide the compress button (optional).
+
+   add the environment variable NO_COMPRESS_BUTTON (value does'nt matter)
+
+   example:
+````
+NO_COMPRESS_BUTTON=
 ````
 
 USAGE
@@ -59,7 +69,7 @@ Connect to your application with your URL (default to http://localhost:3000) and
 
 Hit the run button to see the results.
 
-You can also compress your script if you hit the compress button and save it locally.
+You can also compress your script if you hit the compress button and save it locally (if allowed).
 
 CREDITS
 ------
