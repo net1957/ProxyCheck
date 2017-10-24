@@ -22,6 +22,7 @@ Clone this repository and install gems:
 git clone https://github.com/net1957/ProxyCheck.git
 cd ProxyCheck
 bundle install
+yarn
 rake git_version
 ````
 
