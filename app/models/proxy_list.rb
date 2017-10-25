@@ -4,12 +4,12 @@ class ProxyList
     # @return [Array] of Smash (memoized)
     def all
       @all = load_records unless defined?(@all)
-      @all
+      @all || []
     end
 
     private
 
-    # load and decode PROXYS env variable
+    # load and decode PROXIES env variable
     def load_records
       load_env&.each_with_object([]) do |entry, acc|
         name, url = entry.split(';')

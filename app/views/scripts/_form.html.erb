@@ -6,7 +6,7 @@
     <%= simple_form_for @script, remote: true, url: scripts_path, html: { id: 'url_form' } do |f| %>
       <div class="form-inputs clearfix">
         <%= f.error_notification %>
-        <% if proxy_list %>
+        <% if proxy_list.any? %>
           <%= f.input :name, collection: proxy_list, label_method: :label, value_method: :value, label: "Name#{compress_button}".html_safe, required: true, prompt: 'select proxy to use' %>
         <% else %>
           <%= f.input :name, as: :text, label: "Script or script URL#{compress_button}".html_safe, placeholder: 'Script or script url', required: true %>

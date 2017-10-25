@@ -9,7 +9,7 @@ module Forms
 
     validate :ip_valid?
     validates :name, presence: true, unless: :url_fixed?
-    validates :name, inclusion: { in: proc { ProxyList.all.map { |e| e[:value] } } }, if: :url_fixed?
+    validates :name, inclusion: { in: proc { ProxyList.all.map(&:value) } }, if: :url_fixed?
     validates :action, inclusion: { in: %w[compress url] }
     validate :script_valid?, if: :ip_valid?
 
@@ -64,7 +64,7 @@ module Forms
     end
 
     def url_fixed?
-      ProxyList.all
+      ProxyList.all.any?
     end
   end
 end
