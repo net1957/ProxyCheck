@@ -19,7 +19,7 @@ module AppVersion
   # get git version from file
   def self.git_version
     File.open(Rails.root.join('git_version'), 'r', &:readline)
-  rescue
+  rescue StandardError
     nil
   end
 end
