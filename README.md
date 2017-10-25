@@ -54,6 +54,18 @@ LOGO=mylogo.png
 NO_COMPRESS_BUTTON=
 ````
 
+3. You can limit the proxy field to a list of selectable proxies
+
+   add the environment variable PROXIES with the following format:
+      label1;proxy1 url,label2;proxy2 url
+
+   The proxy text box is changed to a select box
+
+   example:
+````
+PROXIES=normal proxy;http://proxy1.com/script.pac,special proxy;http://proxy2.com/script.pac
+````
+
 USAGE
 -----
 
@@ -63,7 +75,7 @@ rails server
 ````
 
 Connect to your application with your URL (default to http://localhost:3000) and you have three input fields:
-* Script or script URL: you can put the source of your script or the URL of the script (the same as in your navigator). The server that host ProxyCheck must have access to the URL.
+* Script or script URL: you can select a proxy, put the source of your script or the URL of the script (the same as in your navigator). The server that host ProxyCheck must have access to the URL.
 * Client IPv4: the IP of your client. Default to the IP seen by the server.
 * URL(s): you can add one or many URL to check, one per line.
 

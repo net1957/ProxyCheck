@@ -8,7 +8,8 @@ module Forms
     attr_accessor :ip, :name, :action, :url
 
     validate :ip_valid?
-    validates :name, presence: true
+    validates :name, presence: true, unless: :url_fixed?
+    validates :name, inclusion: { in: proc { ProxyList.all.map { |e| e[:value] } } }, if: :url_fixed?
     validates :action, inclusion: { in: %w[compress url] }
     validate :script_valid?, if: :ip_valid?
 
@@ -60,6 +61,10 @@ module Forms
     rescue IPAddr::InvalidAddressError, IPAddr::AddressFamilyError
       errors.add(:ip, :invalid)
       false
+    end
+
+    def url_fixed?
+      ProxyList.all
     end
   end
 end

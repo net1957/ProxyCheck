@@ -4,23 +4,29 @@
   </div>
   <div class="card-section">
     <%= simple_form_for @script, remote: true, url: scripts_path, html: { id: 'url_form' } do |f| %>
-        <div class="form-inputs clearfix">
-          <%= f.error_notification %>
+      <div class="form-inputs clearfix">
+        <%= f.error_notification %>
+        <% if proxy_list %>
+          <%= f.input :name, collection: proxy_list, label_method: :label, value_method: :value, label: "Name#{compress_button}".html_safe, required: true, prompt: 'select proxy to use' %>
+        <% else %>
           <%= f.input :name, as: :text, label: "Script or script URL#{compress_button}".html_safe, placeholder: 'Script or script url', required: true %>
-          <%= f.input :ip, label: 'IP', placeholder: 'Client IPv4 (default to 127.0.0.1)', required: false %>
-          <%= f.input :url, as: :text, label: 'URL(s)<button id="clear" class="hide button tiny secondary no-margin float-right">Clear</button>'.html_safe, placeholder: 'URL(s) to validate', required: false %>
-          <%= f.hidden_field :action, required: false %>
-          <p class="help-text">* mandatory field</p>
-          <div class="form-actions button-group clearfix">
-            <%= f.button :submit, 'Run', id: 'url', data: { disable_with: 'Wait...' } %>
-          </div>
+        <% end %>
+        <%= f.input :ip, label: 'IP', placeholder: 'Client IPv4 (default to 127.0.0.1)', required: false %>
+        <%= f.input :url, as: :text, label: 'URL(s)<button id="clear" class="hide button tiny secondary no-margin float-right">Clear</button>'.html_safe, placeholder: 'URL(s) to validate', required: false %>
+        <%= f.hidden_field :action, required: false %>
+        <p class="help-text">* mandatory field</p>
+        <div class="form-actions button-group clearfix">
+          <%= f.button :submit, 'Run', id: 'url', data: { disable_with: 'Wait...' } %>
         </div>
+      </div>
     <% end %>
   </div>
   <div class="results hide">
     <div class="card-divider clearfix">
       <hr>
-      <h5 class="text-center">Results<button id="reset" class="button tiny secondary float-right">Clear results</button></h5>
+      <h5 class="text-center">Results
+        <button id="reset" class="button tiny secondary float-right">Clear results</button>
+      </h5>
     </div>
     <div class="card-section">
       <table id="result">
