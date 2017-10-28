@@ -5,12 +5,11 @@ module Forms
   class Script
     include ActiveModel::Model
 
-    attr_accessor :ip, :name, :action, :url
+    attr_accessor :ip, :name, :url
 
     validate :ip_valid?
     validates :name, presence: true, unless: :url_fixed?
     validates :name, inclusion: { in: proc { ProxyList.all.map(&:value) } }, if: :url_fixed?
-    validates :action, inclusion: { in: %w[compress url] }
     validate :script_valid?, if: :ip_valid?
 
     # @return [Array] of Hash(url:, result:)
@@ -18,11 +17,6 @@ module Forms
       url.split.each_with_object([]) do |l_url, a|
         a << { url: l_url, result: proxy(l_url) }
       end
-    end
-
-    # @return [Object] compressed script
-    def compress
-      ProxyPacRb::ProxyPacCompressor.new.compress(script)
     end
 
     private
