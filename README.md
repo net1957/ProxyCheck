@@ -81,7 +81,7 @@ Connect to your application with your URL (default to http://localhost:3000) and
 
 Hit the run button to see the results.
 
-You can also compress your script if you hit the compress button and save it locally (if allowed).
+You can also compress your script by using the optimize menu entry and save the optimized file locally (if allowed).
 
 CREDITS
 ------
