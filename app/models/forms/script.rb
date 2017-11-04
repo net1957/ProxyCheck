@@ -37,7 +37,7 @@ module Forms
     # use name accessor
     def generate_script
       env = ip.blank? ? ProxyPacRb::Environment.new : ProxyPacRb::Environment.new(client_ip: ip)
-      ProxyPacRb::Parser.new(environment: env)
+      ProxyPacParser.new(environment: env)
                         .parse(name)
       #                 .tap { |script| Rails.logger.debug { script.inspect } }
     end

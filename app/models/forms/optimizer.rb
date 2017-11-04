@@ -26,10 +26,9 @@ module Forms
     end
 
     # @return [ProxyPacRb::Parser]
-    # use ip accessor
     # use name accessor
     def generate_script
-      ProxyPacRb::Parser.new(environment: ProxyPacRb::Environment.new)
+      ProxyPacParser.new(environment: ProxyPacRb::Environment.new)
                         .parse(name)
       #                 .tap { |script| Rails.logger.debug { script.inspect } }
     end
