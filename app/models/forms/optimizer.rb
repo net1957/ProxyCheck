@@ -19,18 +19,10 @@ module Forms
 
     private
 
-    # @return [ProxyPacRb::Parser]
+    # @return [ProxyPacRb::ProxyPacxxx]
     # memoize it
     def script
-      @script ||= generate_script
-    end
-
-    # @return [ProxyPacRb::Parser]
-    # use name accessor
-    def generate_script
-      ProxyPacParser.new(environment: ProxyPacRb::Environment.new)
-                        .parse(name)
-      #                 .tap { |script| Rails.logger.debug { script.inspect } }
+      @script ||= Parser.new.call(name: name)
     end
 
     # validate the script

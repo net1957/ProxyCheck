@@ -26,20 +26,10 @@ module Forms
       script.find(url)
     end
 
-    # @return [ProxyPacRb::Parser]
+    # @return [ProxyPacRb::ProxyPacxxx]
     # memoize it
     def script
-      @script ||= generate_script
-    end
-
-    # @return [ProxyPacRb::Parser]
-    # use ip accessor
-    # use name accessor
-    def generate_script
-      env = ip.blank? ? ProxyPacRb::Environment.new : ProxyPacRb::Environment.new(client_ip: ip)
-      ProxyPacParser.new(environment: env)
-                        .parse(name)
-      #                 .tap { |script| Rails.logger.debug { script.inspect } }
+      @script ||= Parser.new.call(name: name, ip: ip)
     end
 
     # validate the script
