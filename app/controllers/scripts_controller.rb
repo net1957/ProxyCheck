@@ -1,4 +1,4 @@
-# Manage home page
+# Manage script page
 class ScriptsController < ApplicationController
   def new
     @script = Forms::Script.new(ip: request.remote_ip)

@@ -1,4 +1,4 @@
-# Manage home page
+# Manage optimizer page
 class OptimizeController < ApplicationController
   before_action :allowed?
 
