@@ -1,7 +1,16 @@
 <div class="top-bar-left">
-  <ul class="menu">
+  <ul class="dropdown menu" data-dropdown-menu>
     <li class="hide-for-small-only"><%= link_to image_tag(top_logo), root_path %></li>
     <li class="menu-text">Proxy Check<%= top_suffix %></li>
+    <% if compress? %>
+      <li class="menu"><a href="#">Actions</a>
+        <ul class="menu vertical">
+          <li class="menu"><%= link_to 'URL', new_scripts_path %></li>
+          <li class="menu"><%= link_to 'Optimize', new_optimize_path %></li>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
   </ul>
 </div>
 

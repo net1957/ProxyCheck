@@ -1,4 +1,4 @@
-# Manage home page
+# Manage script page
 class ScriptsController < ApplicationController
   def new
     @script = Forms::Script.new(ip: request.remote_ip)
@@ -14,14 +14,7 @@ class ScriptsController < ApplicationController
   attr_reader :script
 
   def result
-    case script_params[:action]
-    when 'compress'
-      render json: { response: script.compress }
-    when 'url'
-      render json: { response: script.proxies }
-    else
-      render json: { error: true }
-    end
+    render json: { response: script.proxies }
   end
 
   def script_params

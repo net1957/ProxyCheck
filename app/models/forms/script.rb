@@ -5,12 +5,11 @@ module Forms
   class Script
     include ActiveModel::Model
 
-    attr_accessor :ip, :name, :action, :url
+    attr_accessor :ip, :name, :url
 
     validate :ip_valid?
     validates :name, presence: true, unless: :url_fixed?
     validates :name, inclusion: { in: proc { ProxyList.all.map(&:value) } }, if: :url_fixed?
-    validates :action, inclusion: { in: %w[compress url] }
     validate :script_valid?, if: :ip_valid?
 
     # @return [Array] of Hash(url:, result:)
@@ -20,11 +19,6 @@ module Forms
       end
     end
 
-    # @return [Object] compressed script
-    def compress
-      ProxyPacRb::ProxyPacCompressor.new.compress(script)
-    end
-
     private
 
     # @return [String] script result for url and ip
@@ -32,20 +26,10 @@ module Forms
       script.find(url)
     end
 
-    # @return [ProxyPacRb::Parser]
+    # @return [ProxyPacRb::ProxyPacxxx]
     # memoize it
     def script
-      @script ||= generate_script
-    end
-
-    # @return [ProxyPacRb::Parser]
-    # use ip accessor
-    # use name accessor
-    def generate_script
-      env = ip.blank? ? ProxyPacRb::Environment.new : ProxyPacRb::Environment.new(client_ip: ip)
-      ProxyPacRb::Parser.new(environment: env)
-                        .parse(name)
-      #                 .tap { |script| Rails.logger.debug { script.inspect } }
+      @script ||= Parser.new.call(name: name, ip: ip)
     end
 
     # validate the script
