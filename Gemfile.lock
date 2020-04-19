@@ -71,7 +71,7 @@ GEM
       sprockets-es6 (>= 0.9.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    hashie (3.6.0)
+    hashie (4.1.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
@@ -106,7 +106,8 @@ GEM
       thor (~> 0.19)
       uglifier (>= 2.7.1)
     public_suffix (4.0.4)
-    puma (3.12.4)
+    puma (4.3.3)
+      nio4r (~> 2.0)
     rack (2.2.2)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -140,7 +141,7 @@ GEM
       ffi (~> 1.0)
     ref (2.0.0)
     rexml (3.2.4)
-    rubocop (0.81.0)
+    rubocop (0.82.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.7.0.1)
@@ -205,11 +206,11 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   debase
   foundation-rails (~> 6.3.0)
-  hashie (~> 3.0)
+  hashie (~> 4.0)
   jquery-rails
   listen
   proxy_pac_rb (>= 3.0)
-  puma (~> 3.0)
+  puma (~> 4.0)
   rails (~> 5.1.7)
   rubocop
   rubocop-performance

@@ -12,7 +12,7 @@ Vagrant.configure('2') do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = 'bento/ubuntu-16.04'
+  config.vm.box = 'ubuntu/bionic64'
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -76,7 +76,7 @@ Vagrant.configure('2') do |config|
     sudo apt-get install software-properties-common
     sudo add-apt-repository -y ppa:brightbox/ruby-ng
     # for nodejs repository
-    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
     # for yarn repository
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
@@ -85,8 +85,7 @@ Vagrant.configure('2') do |config|
     sudo apt-get -y dist-upgrade
     # install ruby & prerequisite
     sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev libffi-dev
-    sudo apt-get install -y ruby2.3 ruby2.3-dev ruby-switch
-    sudo ruby-switch --set ruby2.3
+    sudo apt-get install -y ruby2.6 ruby2.6-dev
     # install rubygems, bundler, nodejs & yarn
     sudo gem update --system --no-doc
     sudo gem install bundler --no-doc
