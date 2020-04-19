@@ -23,18 +23,18 @@ module Forms
 
     # @return [String] script result for url and ip
     def proxy(url)
-      script.find(url)
+      parser.find(url)
     end
 
     # @return [ProxyPacRb::ProxyPacxxx]
     # memoize it
-    def script
-      @script ||= Parser.new.call(name: name, ip: ip)
+    def parser
+      @parser ||= Parser.new.call(name: name, ip: ip)
     end
 
     # validate the script
     def script_valid?
-      errors.add(:name, script.message) unless script.valid
+      errors.add(:name, parser.message) unless parser.valid
     end
 
     # validate that ip is a valid IPV4 address
