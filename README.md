@@ -28,7 +28,7 @@ rake git_version
 
 It should work on all nix systems, but not on windows due to the lack of support by the therubyracer gem.
 
-You can use Vagrant to test it. A Vagrantfile based on bento/ubuntu-16.04 is provided.
+You can use Vagrant to test it. A Vagrantfile based on ubuntu/bionic64 and ruby 2.6 is provided.
 
 CONFIGURATION
 -------------
@@ -105,7 +105,7 @@ LICENSE
 
 (The MIT License)
 
-Copyright (c) 2017-2018 Serge Kueny
+Copyright (c) 2017-2020 Serge KUENY
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
