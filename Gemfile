@@ -13,7 +13,7 @@ gem 'therubyracer'
 
 # for forms
 gem 'foundation-rails', '~>6.3.0'
-gem 'simple_form', '~>3.0'
+gem 'simple_form', '~>5.0'
 
 # to access configuration
 gem 'hashie', '~>3.0'
