@@ -1,5 +1,4 @@
 # Use this setup block to configure all options available in SimpleForm.
-# rubocop:disable Metrics/LineLength
 SimpleForm.setup do |config| # rubocop:disable Metrics/BlockLength
   # Don't forget to edit this file to adapt it to your needs (specially
   # all the grid-related classes)
@@ -109,4 +108,3 @@ SimpleForm.setup do |config| # rubocop:disable Metrics/BlockLength
   # The default wrapper to be used by the FormBuilder.
   config.default_wrapper = :vertical_form
 end
-# rubocop:enable Metrics/LineLength

@@ -32,11 +32,17 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'debase'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  # gem 'byebug', platform: :mri
+  gem 'ruby-debug-ide'
 end
 
 group :development do
+  # to lint ruby
+  gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
   # To find changes
   gem 'listen'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

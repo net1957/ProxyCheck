@@ -41,6 +41,7 @@ module Forms
     # @return [Binary] true or false
     def ip_valid?
       return true if ip.blank?
+
       IPAddr.new(ip.strip, Socket::AF_INET) && true
     rescue IPAddr::InvalidAddressError, IPAddr::AddressFamilyError
       errors.add(:ip, :invalid)
