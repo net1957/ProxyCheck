@@ -19,7 +19,7 @@ gem 'simple_form', '~>5.0'
 gem 'hashie', '~>3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.1.3'
+gem 'rails', '~>5.1.7'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
