@@ -73,7 +73,7 @@ Vagrant.configure('2') do |config|
   # SHELL
   config.vm.provision 'shell', inline: <<-SHELL
     # for ruby repository
-    sudo apt-get install software-properties-common
+    sudo apt-get install -y software-properties-common
     sudo add-apt-repository -y ppa:brightbox/ruby-ng
     # for nodejs repository
     curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
@@ -84,12 +84,16 @@ Vagrant.configure('2') do |config|
     sudo apt-get update
     sudo apt-get -y dist-upgrade
     # install ruby & prerequisite
-    sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev libffi-dev
-    sudo apt-get install -y ruby2.6 ruby2.6-dev
-    # install rubygems, bundler, nodejs & yarn
-    sudo gem update --system --no-doc
+    # select the wanted ruby version rubyx.x & rubyx.x-dev
+    sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev \
+                            libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev \
+                            libcurl4-openssl-dev libffi-dev \
+                            ruby2.6 ruby2.6-dev \
+                            nodejs yarn
+    # install rubygems, bundler
+    # limit rubygems to version 3.0.6 to avoid deprecation warnings about Gem::ConfigMap
+    sudo gem update --system 3.0.6 --no-doc
     sudo gem install bundler --no-doc
-    sudo apt-get install -y nodejs yarn
     # cleanup
     sudo apt-get autoremove -y
     sudo apt-get autoclean -y
