@@ -8,8 +8,8 @@ end
 ruby '>=2.3.0'
 
 # for proxy
-gem 'proxy_pac_rb', '>= 3.0'
-gem 'therubyracer'
+gem 'proxy_pac_rb',  github: "net1957/proxy_pac_rb", branch: "miniracer"
+gem 'mini_racer'
 
 # for forms
 gem 'foundation-rails', '~>6.3.0'
