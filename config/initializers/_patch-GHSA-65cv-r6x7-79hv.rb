@@ -2,6 +2,8 @@
 # correct bug GHSA-65cv-r6x7-79hv in rails 5.1
 # Corrected in Rails 5.2.4.2 and 6.0.2.2
 # Supress this file if you install Rails greater than 5.2.4.2 or 6.0.2.2
+
+# rubocop: disable all
 ActionView::Helpers::JavaScriptHelper::JS_ESCAPE_MAP.merge!(
   {
     "`" => "\\`",
@@ -25,3 +27,4 @@ module ActionView::Helpers::JavaScriptHelper
 
   alias :j :escape_javascript
 end
+# rubocop: enable all
