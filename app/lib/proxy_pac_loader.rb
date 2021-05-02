@@ -1,6 +1,7 @@
 # Our ProxyPacLoader without File loader
 class ProxyPacLoader < ProxyPacRb::ProxyPacLoader
   def initialize
+    super
     @loaders = []
     @loaders << ProxyPacRb::ProxyPacStringLoader.new
     @loaders << ProxyPacRb::ProxyPacUriLoader.new
