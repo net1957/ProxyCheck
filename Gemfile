@@ -8,7 +8,7 @@ end
 ruby '>=2.3.0'
 
 # for proxy
-gem 'mini_racer'
+gem 'mini_racer', '~>0.4.0'
 gem 'proxy_pac_rb', github: 'net1957/proxy_pac_rb', branch: 'miniracer'
 
 # for forms
@@ -48,7 +48,7 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   # Use Puma as the app server
-  gem 'puma', '~> 4.3'
+  gem 'puma', '~> 5.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
