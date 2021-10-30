@@ -13,16 +13,39 @@ chdir APP_ROOT do
   # This script is a way to update your development environment automatically.
   # Add necessary update steps to this file.
 
-  puts '== Installing dependencies =='
-  system! 'gem install bundler --conservative'
-  system('bundle check') || system!('bundle install')
+  ENV['RAILS_ENV'] ||= 'production'
+  puts "\n== Rails Environment is #{ENV['RAILS_ENV']} (set by RAILS_ENV) ==\n"
+  ENV['NODE_ENV'] ||= 'production'
+  puts "\n== Node Environment is #{ENV['NODE_ENV']} (set by NODE_ENV) ==\n"
 
-  # Install JavaScript dependencies if using Yarn
-  # system('bin/yarn')
+  ENV['SECRET_KEY_BASE'] ||= 'xx'
+
+  puts "\n== Installing dependencies =="
+  system 'gem update --system --no-doc'
+  system 'rbenv rehash'
+  system! "bin/bundle config set --local deployment 'true'"
+  system! 'bin/bundle config set --local without development:test'
+  system('bin/bundle check') || system!('bin/bundle')
+
+  # Install JavaScript dependencies
+  system! 'bin/yarn'
+
+  puts "\n== Delete old assets files =="
+  system! 'bin/bundle exec rails assets:clobber'
+
+  puts "\n== Compile assets =="
+  system! 'bin/bundle exec rails assets:precompile'
+
+  puts "\n== Get Git version =="
+  system! 'bin/bundle exec rails git_version'
 
   puts "\n== Removing old logs and tempfiles =="
-  system! 'bin/rails log:clear tmp:clear'
+  system! 'bin/bundle exec rails log:clear tmp:clear'
+
+  puts "\n== Removing old gems =="
+  system 'bin/bundle clean'
 
   puts "\n== Restarting application server =="
-  system! 'bin/rails restart'
+  system! 'sudo passenger-config restart-app $(pwd)'
+
 end
