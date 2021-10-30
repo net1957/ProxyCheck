@@ -26,7 +26,7 @@ config.yml
 doc
 .idea
 rubocop.txt
-.rubocop*.yml
+.rubocop*
 brakeman.*
 git_version
 .vagrant
