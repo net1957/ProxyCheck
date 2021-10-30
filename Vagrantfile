@@ -3,14 +3,14 @@
 
 RUBY_V = File.open('./.ruby-version', &:read).chomp
 Vagrant.configure('2') do |config|
-  config.vm.box = 'ubuntu/bionic64'
+  config.vm.box = 'bento/debian-10.10'
   config.vm.network 'forwarded_port', guest: 3000, host: 8080, host_ip: 'localhost'
   config.vm.provider 'virtualbox' do |vb|
     vb.memory = '1024'
   end
   config.vm.provision 'shell', inline: <<-SHELL
     # for nodejs repository
-    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
     # for yarn repository
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
