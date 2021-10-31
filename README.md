@@ -13,9 +13,9 @@ Proxy scripts are well described here: https://en.wikipedia.org/wiki/Proxy_auto-
 INSTALLATION
 ------------
 
-ProxyCheck is a Rails 5.1 application and all rails prerequisites applies.
+ProxyCheck is a Rails 6.1 application and all rails prerequisites applies.
 
-Node.js, Yarn, Git and Ruby 2.3 or higher should be installed on the system.
+Node.js, Yarn, Git and Ruby 3.0 or higher should be installed on the system.
 
 Clone this repository and install gems:
 ````
@@ -28,7 +28,7 @@ rake git_version
 
 It should work on all nix systems, but not on windows due to the lack of support by the therubyracer gem.
 
-You can use Vagrant to test it. A Vagrantfile based on ubuntu/bionic64 and ruby 2.6 is provided.
+You can use Vagrant to test it. A Vagrantfile based on debian-10 and ruby 3.0 is provided.
 
 CONFIGURATION
 -------------
@@ -45,7 +45,7 @@ All Rails configuration apply, but no database is used, so activerecord is disab
 LOGO=mylogo.png
 ````
 
-2. you can hide the compress button (optional).
+2. you can hide the compress menu (optional).
 
    add the environment variable NO_COMPRESS_BUTTON (value does'nt matter)
 
@@ -54,7 +54,7 @@ LOGO=mylogo.png
 NO_COMPRESS_BUTTON=
 ````
 
-3. You can limit the proxy field to a list of selectable proxies
+3. You can limit the proxy field to a list of selectable proxies (optional).
 
    add the environment variable PROXIES with the following format:
       label1;proxy1 url,label2;proxy2 url
@@ -105,7 +105,7 @@ LICENSE
 
 (The MIT License)
 
-Copyright (c) 2017-2020 Serge KUENY
+Copyright (c) 2017-2021 Serge KUENY
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
