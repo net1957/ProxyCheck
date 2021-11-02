@@ -23,7 +23,15 @@ git clone https://github.com/net1957/ProxyCheck.git
 cd ProxyCheck
 bundle install
 yarn
-rake git_version
+bundle exec rails git_version
+bundle exec rails redoc_dev
+````
+
+or with scripts (mainly for prod):
+````
+git clone https://github.com/net1957/ProxyCheck.git
+./bin/setup  (or ./bin/update)
+
 ````
 
 It should work on all nix systems, but not on windows due to the lack of support by the therubyracer gem.

@@ -31,6 +31,9 @@ gem 'coffee-rails', '~> 5.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+# bundle exec rails redoc_dev generates the API under doc/app.
+gem 'sdoc', group: :doc
+
 group :development, :test do
   gem 'debase'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

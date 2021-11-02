@@ -23,7 +23,7 @@
 #secrets.yml
 config.yml
 #database.yml
-doc
+doc/app
 .idea
 rubocop.txt
 .rubocop*
