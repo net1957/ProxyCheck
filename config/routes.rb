@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   resource :scripts, only: %i[new create]
   resource :optimize, only: %i[new create]
 
+  # to respond to health checks.
+  get '/health', to: 'health#index'
+
   root 'scripts#new'
 end
