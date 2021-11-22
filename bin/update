@@ -49,6 +49,5 @@ chdir APP_ROOT do
   system 'bin/bundle clean'
 
   puts "\n== Restarting application server =="
-  system! 'passenger-config restart-app $(pwd)'
-
+  system 'passenger-config restart-app $(pwd)'
 end

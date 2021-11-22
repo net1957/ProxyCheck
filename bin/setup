@@ -28,7 +28,7 @@ FileUtils.chdir APP_ROOT do
   puts "\n== Nginx/Passenger configuration ==\n"
   puts "Add the following commands in your vhost:\n"
   puts "passenger_env_var SECRET_KEY_BASE #{secret_key_base};\n"
-  puts "passenger_env_var LOGO logo.png\n"
+  puts "passenger_env_var LOGO logo.png;\n"
 
   ENV['SECRET_KEY_BASE'] ||= 'xx'
 
@@ -61,5 +61,5 @@ FileUtils.chdir APP_ROOT do
   system 'bin/bundle clean'
 
   puts "\n== Restarting application server =="
-  system! 'passenger-config restart-app $(pwd)'
+  system 'passenger-config restart-app $(pwd)'
 end
