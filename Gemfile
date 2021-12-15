@@ -8,7 +8,7 @@ end
 ruby '>=3.0.0'
 
 # for proxy
-gem 'mini_racer', '~>0.4.0'
+gem 'mini_racer', '~>0.5.0'
 gem 'proxy_pac_rb', github: 'net1957/proxy_pac_rb', branch: 'miniracer'
 
 # for forms
@@ -16,7 +16,7 @@ gem 'foundation-rails', '~>6.3.0'
 gem 'simple_form', '~>5.0'
 
 # to access configuration
-gem 'hashie', '~>4.0'
+gem 'hashie', '~>5.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~>6.1.0'
