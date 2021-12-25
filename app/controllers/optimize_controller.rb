@@ -16,7 +16,7 @@ class OptimizeController < ApplicationController
   attr_reader :optimizer
 
   def result
-    render json: { response: optimizer.optimize }
+    render json: { response: optimizer.result }
   end
 
   def optimize_params

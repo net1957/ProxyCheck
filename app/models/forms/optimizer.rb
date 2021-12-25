@@ -6,15 +6,20 @@ module Forms
     include ActiveModel::Model
 
     attr_accessor :name
+    attr_reader :result
 
     validates :name, presence: true, unless: :url_fixed?
     validates :name, inclusion: { in: proc { ProxyList.all.map(&:value) } }, if: :url_fixed?
     validate :script_valid?
+    validate :optimize, if: ->(e) { e.errors.empty? }
 
-    # @return [Object] optimised script
+    # Set @return to compressed script
+    # @return [String] compressed script
     def optimize
-      opts = { output: { beautify: false }, mangle: true }
-      ProxyPacRb::ProxyPacCompressor.new(options: opts).compress(script)
+      opts = { output: { beautify: false }, mangle: true, harmony: true }
+      @result = ProxyPacRb::ProxyPacCompressor.new(options: opts).compress(script)
+    rescue StandardError, Uglifier::Error => e
+      errors.add(:name, "Script invalid: #{e.message}")
     end
 
     private
