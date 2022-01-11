@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Manage optimizer page
 class OptimizeController < ApplicationController
   before_action :allowed?

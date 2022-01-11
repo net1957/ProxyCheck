@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # parse a script
 class Parser
   # @return [ProxyPacRb::ProxyPacxxx]

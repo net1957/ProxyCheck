@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Our ProxyPacLoader without File loader
 class ProxyPacLoader < ProxyPacRb::ProxyPacLoader
   def initialize

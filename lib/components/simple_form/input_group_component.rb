@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # custom component
 # permit to pass a html string wrapped bay a  div .control
 module InputAddons

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Manage script page
 class ScriptsController < ApplicationController
   def new

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Helpers used in views
 module ApplicationHelper
   def top_suffix

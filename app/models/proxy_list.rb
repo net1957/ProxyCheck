@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # manage proxy list
 class ProxyList
   class << self

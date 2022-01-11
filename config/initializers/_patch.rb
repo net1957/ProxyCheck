@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # patch to correct utf8 string wrongly encoded as ASCII-8BIT
 # tested on linux with ruby 2.2.7-p470 and 2.3.4-p301
 module ProxyPacRb
