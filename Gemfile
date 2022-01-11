@@ -53,7 +53,6 @@ group :development do
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
-  # To find changes
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
   # Use Puma as the app server
