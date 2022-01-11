@@ -1,5 +1,11 @@
-<div class="row">
-  <div class="large-12 columns" id="form">
-    <%= render 'form' %>
-  </div>
+<div data-controller="navigate">
+  <turbo-frame id="section_1">
+    <section class="section" id="form">
+      <div class="card">
+        <%= render 'form' %>
+      </div>
+    </section>
+  </turbo-frame>
+  <turbo-frame id="result">
+  </turbo-frame>
 </div>

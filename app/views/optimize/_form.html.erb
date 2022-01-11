@@ -1,21 +1,28 @@
-<div class="card">
-  <div class="card-divider">
-    <h5 class="text-center">Optimize script</h5>
-  </div>
-  <div class="card-section">
-    <%= simple_form_for @optimizer, remote: true, url: optimize_path, html: { id: 'compress_form' } do |f| %>
-      <div class="form-inputs clearfix">
-        <%= f.error_notification %>
-        <% if proxy_list.any? %>
-          <%= f.input :name, collection: proxy_list, label_method: :label, value_method: :value, label: 'Name', required: true, prompt: 'select proxy to use' %>
-        <% else %>
-          <%= f.input :name, as: :text, label: 'Script or script URL', placeholder: 'Script or script url', required: true %>
-        <% end %>
-        <p class="help-text">* mandatory field</p>
-        <div class="form-actions button-group clearfix">
-          <%= f.button :submit, 'Optimize', id: 'compress', data: { disable_with: 'Wait...' } %>
+<header class="card-header">
+  <p class="card-header-title">
+    Optimize script
+  </p>
+</header>
+<div class="card-content">
+  <div class="content">
+    <%= simple_form_for @optimizer, wrapper: :vertical_form, url: optimize_path, html: { id: 'compress_form', data: { turbo: false } } do |f| %>
+      <%= f.error_notification %>
+      <% if proxy_list.any? %>
+        <%= f.input :name, collection: proxy_list, label_method: :label, value_method: :value, label: 'Name', required: true, prompt: 'select proxy to use' %>
+      <% else %>
+        <%= f.input :name, as: :text, label: 'Script or script URL', placeholder: 'Script or script url', required: true %>
+      <% end %>
+      <div class="field">
+        <div class="control">
+          <%= f.button :submit, 'Optimize', id: 'url', class: 'is-link',
+                       data: { disable_with: 'Wait...', action: "click->navigate#clear" } %>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+<footer class="footer">
+  <div class="content is-size-7">
+    <p><strong>*</strong> mandatory field</p>
+  </div>
+</footer>

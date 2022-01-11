@@ -1,0 +1,42 @@
+<div data-controller="navigate">
+<!--
+  <turbo-frame id="section_1">
+    <section class="section" id="form">
+      <div class="card">
+        <%#= render 'form' %>
+      </div>
+    </section>
+  </turbo-frame>
+-->
+  <turbo-frame id="result">
+    <section class="section" id="result" data-navigate-target="error">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            Results
+          </p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <table id="result">
+              <thead>
+              <tr>
+                <td><strong>Url</strong></td>
+                <td><strong>Proxy used</strong></td>
+              </tr>
+              </thead>
+              <tbody>
+              <% @script.proxies.each do |p| %>
+                <tr>
+                  <td><%= p[:url] %></td>
+                  <td><%= p[:result] %></td>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </turbo-frame>
+</div>

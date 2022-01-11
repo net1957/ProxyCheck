@@ -1,27 +1,22 @@
-<div class="top-bar-left">
-  <ul class="dropdown menu" data-dropdown-menu>
-    <li class="hide-for-small-only"><%= link_to image_tag(top_logo), root_path %></li>
-    <li class="menu-text">Proxy Check<%= top_suffix %></li>
-    <% if compress? %>
-      <li class="menu"><a href="#">Actions</a>
-        <ul class="menu vertical">
-          <li class="menu"><%= link_to 'URL', new_scripts_path %></li>
-          <li class="menu"><%= link_to 'Optimize', new_optimize_path %></li>
-        </ul>
-      </li>
-    <% end %>
-  </ul>
-  </ul>
+<div class="navbar-start">
+  <% if compress? %>
+    <div class="navbar-item has-dropdown is-hoverable">
+      <a class="navbar-link">Menu</a>
+      <div class="navbar-dropdown is-boxed">
+        <%= link_to 'URL', new_scripts_path, class: "navbar-item" %>
+        <%= link_to 'Optimize', new_optimize_path, class: "navbar-item" %>
+      </div>
+    </div>
+  <%- end -%>
 </div>
 
-<div class="top-bar-right">
-  <ul class="dropdown menu" data-dropdown-menu>
-    <li class="menu"><a href="#">Help</a>
-      <ul class="menu vertical">
-        <li class="menu-text">
-          <small><%= "Version: #{AppVersion}-#{Rails.env}" %></small>
-        </li>
-      </ul>
-    </li>
-  </ul>
+<div class="navbar-end">
+  <div class="navbar-item has-dropdown is-hoverable">
+    <a class="navbar-link">Help</a>
+    <div class="navbar-dropdown is-boxed is-right">
+      <a class="navbar-item">
+        <small><%= "Version: #{AppVersion}-#{Rails.env}" %></small>
+      </a>
+    </div>
+  </div>
 </div>

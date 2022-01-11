@@ -1,0 +1,15 @@
+<nav class="navbar" data-controller="burger">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/"><%= image_tag(top_logo) %></a>
+    <div class="navbar-item">Proxy Check<%= top_suffix %></div>
+    <a role="button" class='navbar-burger' data-action="click->burger#toggle" data-burger-target="menu" aria-label="menu"
+       aria-expanded="false">
+      <span aria-hidden="true" />
+      <span aria-hidden="true" />
+      <span aria-hidden="true" />
+    </a>
+  </div>
+  <div class='navbar-menu' data-burger-target="menu">
+    <%= render 'shared/top_menu' %>
+  </div>
+</nav>

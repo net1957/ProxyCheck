@@ -6,16 +6,12 @@ class ScriptsController < ApplicationController
 
   def create
     @script = Forms::Script.new(script_params)
-    script.valid? ? result : render
+    script.valid? ? render(status: :ok) : render(:new, status: :unprocessable_entity)
   end
 
   private
 
   attr_reader :script
-
-  def result
-    render json: { response: script.proxies }
-  end
 
   def script_params
     params.require(:forms_script).permit(:ip, :name, :action, :url)

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta charset="utf-8"/>
@@ -7,37 +7,14 @@
 
   <title><%= content_for?(:title) ? yield(:title) : 'Proxy Check' %></title>
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= csp_meta_tag %>
 
+  <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
+  <%= javascript_importmap_tags %>
 </head>
 
 <body>
-<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
-  <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
-  <div class="title-bar-title">Menu&nbsp<%= link_to image_tag(top_logo), root_path %></div>
-</div>
-<div class="top-bar" id="responsive-menu">
-  <%= render 'shared/top_menu' %>
-</div>
-<br>
-
-<div class="row">
-  <div class="large-12 columns" id="msg">
-    <%= render 'shared/messages' %>
-  </div>
-</div>
-
+<%= render 'shared/top_navbar' %>
 <%= yield %>
-
-<div id="myModalErr" class="reveal small" data-reveal>
-  <span class="modalErrText">
-  </span>
-  <button class="close-button" data-close aria-label="Close modal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-
-<%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
-
 </body>
 </html>
