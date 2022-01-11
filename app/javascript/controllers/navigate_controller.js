@@ -19,4 +19,7 @@ export default class extends Controller {
   clear_url() {
     document.getElementById("forms_script_url").value = ""
   }
+  clear_name() {
+    document.getElementById("forms_script_name").value = ""
+  }
 }

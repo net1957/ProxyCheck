@@ -11,7 +11,9 @@
         <%= f.input :name, collection: proxy_list, label_method: :label, value_method: :value, label: 'Name',
                     required: true, prompt: 'select proxy to use' %>
       <% else %>
-        <%= f.input :name, as: :text, label: 'Script or script URL', placeholder: 'Script or script url', required: true %>
+        <%= f.input :name, as: :text, label: 'Script or script URL', placeholder: 'Script or script url', required: true,
+                    wrapper: :input_addons,
+                    addons: '<a class="button" data-action="click->navigate#clear_name">Clear</a>' %>
       <% end %>
       <%= f.input :ip, label: 'IP', placeholder: 'Client IPv4 (default to 127.0.0.1)', required: false %>
       <%= f.input :url, as: :text, label: 'URL(s)', placeholder: 'URL(s) to validate', required: true,
