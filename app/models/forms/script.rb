@@ -8,9 +8,10 @@ module Forms
     attr_accessor :ip, :name, :url
 
     validate :ip_valid?
-    validates :name, presence: true, unless: :url_fixed?
-    validates :name, inclusion: { in: proc { ProxyList.all.map(&:value) } }, if: :url_fixed?
-    validate :script_valid?, if: :ip_valid?
+    validates :name, presence: true, unless: :proxies_fixed?
+    validates :name, inclusion: { in: proc { ProxyList.all.map(&:value) } }, if: :proxies_fixed?
+    validates :url, presence: true
+    validate :script_valid?, if: ->(e) { e.errors.empty? }
 
     # @return [Array] of Hash(url:, result:)
     def proxies
@@ -48,7 +49,7 @@ module Forms
       false
     end
 
-    def url_fixed?
+    def proxies_fixed?
       ProxyList.all.any?
     end
   end

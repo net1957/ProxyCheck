@@ -8,9 +8,9 @@ module Forms
     attr_accessor :name
     attr_reader :result
 
-    validates :name, presence: true, unless: :url_fixed?
-    validates :name, inclusion: { in: proc { ProxyList.all.map(&:value) } }, if: :url_fixed?
-    validate :script_valid?
+    validates :name, presence: true, unless: :proxies_fixed?
+    validates :name, inclusion: { in: proc { ProxyList.all.map(&:value) } }, if: :proxies_fixed?
+    validate :script_valid?, if: ->(e) { e.errors.empty? }
     validate :optimize, if: ->(e) { e.errors.empty? }
 
     # Set @return to compressed script
@@ -35,7 +35,7 @@ module Forms
       errors.add(:name, script.message) unless script.valid
     end
 
-    def url_fixed?
+    def proxies_fixed?
       ProxyList.all.any?
     end
   end
