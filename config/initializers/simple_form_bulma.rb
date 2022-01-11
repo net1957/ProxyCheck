@@ -62,6 +62,7 @@ SimpleForm.setup do |config|
     field.use :full_error, wrap_with: { tag: 'p', class: 'help is-danger', html: { data: { navigate_target: 'error' } } }
   end
 
+  # input with addons; addons is embedded in a div .control
   config.wrappers :input_addons, class: 'field' do |wrap|
     wrap.use :label, class: 'label'
 
@@ -79,22 +80,6 @@ SimpleForm.setup do |config|
       field.use :addons
     end
     wrap.use :full_error, wrap_with: { tag: 'p', class: 'help is-danger', html: { data: { navigate_target: 'error' } } }
-  end
-
-  # bulma vertical input_group
-  config.wrappers :xinput_group, tag: 'div', class: 'field has-addons' do |b|
-    b.use :html5
-    b.use :placeholder
-    b.optional :maxlength
-    b.optional :minlength
-    b.optional :pattern
-    b.optional :min_max
-    b.optional :readonly
-    b.use :input, class: 'input', wrap_with: { tag: 'div', class: 'control is-expanded' },
-                  error_class: 'is-danger', valid_class: 'is-success'
-    b.use :addons
-    b.use :full_error, wrap_with: { tag: 'p', class: 'help is-danger', html: { data: { navigate_target: 'error' } } }
-    # b.use :hint, wrap_with: { tag: "small", class: "form-text text-muted" }
   end
 
   # bulma vertical select_form
