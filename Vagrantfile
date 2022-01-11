@@ -1,11 +1,12 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-RUBY_V = File.open('./.ruby-version', &:read).chomp
+RUBY_V = File.read('./.ruby-version').chomp
 Vagrant.configure('2') do |config|
-  config.vm.box = 'bento/debian-10.10'
+  config.vm.box = 'bento/debian-10'
   config.vm.network 'forwarded_port', guest: 3000, host: 8080, host_ip: 'localhost'
-  config.vm.provider 'virtualbox' do |vb|
+  # change to 'virtualbox' if you use it in place of vmware
+  config.vm.provider 'vmware_desktop' do |vb|
     vb.memory = '1024'
   end
   config.vm.provision 'shell', inline: <<-SHELL
@@ -14,10 +15,11 @@ Vagrant.configure('2') do |config|
     # for yarn repository
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-    # update
+    # update the apt repositories
     sudo apt-get update
+    # update the system
+    sudo apt-get dist-upgrade
     # install ruby prerequisite
-    # select the wanted ruby version rubyx.x & rubyx.x-dev
     sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev \
                             libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev \
                             libcurl4-openssl-dev libffi-dev \
@@ -56,5 +58,6 @@ Vagrant.configure('2') do |config|
       rbenv rehash
     # fi
     bundle install
+    yarn --no-bin-links
   SCRIPT
 end
