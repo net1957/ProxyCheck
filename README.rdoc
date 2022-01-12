@@ -1,45 +1,42 @@
-ProxyCheck
-==========
+=ProxyCheck
 
 Proxy checker
 
-DESCRIPTION
------------
+==DESCRIPTION
 
 ProxyCheck show the response of a proxy script for URLs(s).
 
 Proxy scripts are well described here: https://en.wikipedia.org/wiki/Proxy_auto-config
 
-INSTALLATION
-------------
+==INSTALLATION
+
 
 ProxyCheck is a Rails 7 application and all rails prerequisites applies.
 
 Node.js, Yarn, Git and Ruby 3.0 or higher should be installed on the system.
 
 Clone this repository and install gems:
-````
-git clone https://github.com/net1957/ProxyCheck.git
-cd ProxyCheck
-bundle install
-yarn
-bundle exec rails git_version
-bundle exec rails redoc_dev
-````
+
+  git clone https://github.com/net1957/ProxyCheck.git
+  cd ProxyCheck
+  bundle install
+  yarn
+  bundle exec rails assets:precompile
+  bundle exec rails git_version
+  bundle exec rails rdoc
 
 or with scripts (mainly for prod):
-````
-git clone https://github.com/net1957/ProxyCheck.git
-./bin/setup  (or ./bin/update)
 
-````
+  git clone https://github.com/net1957/ProxyCheck.git
+  ./bin/setup  (or ./bin/update)
 
-It should work on all nix systems, but not on windows due to the lack of support by the therubyracer gem.
+
+It should work on all nix systems, but not on windows due to the lack of support by the libv8-node gem used by
+mini_racer gem.
 
 You can use Vagrant to test it. A Vagrantfile based on debian-10 and ruby 3.0 is provided.
 
-CONFIGURATION
--------------
+==CONFIGURATION
 
 All Rails configuration apply, but no database is used, so activerecord is disabled. See config/application.rb file for details.
 
@@ -49,18 +46,14 @@ All Rails configuration apply, but no database is used, so activerecord is disab
    Simply put a png file (159*18 pixels) in app/assets/images directory and set the environment variable LOGO with the filename (without path).
 
    example:
-````
-LOGO=mylogo.png
-````
+     LOGO=mylogo.png
 
 2. you can hide the compress menu (optional).
 
    add the environment variable NO_COMPRESS_BUTTON (value does'nt matter)
 
    example:
-````
-NO_COMPRESS_BUTTON=
-````
+     NO_COMPRESS_BUTTON=
 
 3. You can limit the proxy field to a list of selectable proxies (optional).
 
@@ -70,17 +63,12 @@ NO_COMPRESS_BUTTON=
    The proxy text box is changed to a select box
 
    example:
-````
-PROXIES=normal proxy;http://proxy1.com/script.pac,special proxy;http://proxy2.com/script.pac
-````
+     PROXIES=normal proxy;http://proxy1.com/script.pac,special proxy;http://proxy2.com/script.pac
 
-USAGE
------
+==USAGE
 
 Start the server
-````
-rails server
-````
+  bin/rails server
 
 Connect to your application with your URL (default to http://localhost:3000) and you have three input fields:
 * Script or script URL: you can select a proxy, put the source of your script or the URL of the script (the same as in your navigator). The server that host ProxyCheck must have access to the URL.
@@ -91,13 +79,11 @@ Hit the run button to see the results.
 
 You can also compress your script by using the optimize menu entry and save the optimized file locally (if allowed).
 
-CREDITS
-------
+==CREDITS
 
 This application is build on top of the proxy_pac_rb gem. 
 
-LINKS
------
+==LINKS
 
 * Node.js: https://nodejs.org
 * Yarn : https://yarnpkg.com
