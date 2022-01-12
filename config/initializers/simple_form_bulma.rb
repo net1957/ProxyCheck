@@ -79,7 +79,7 @@ SimpleForm.setup do |config|
       end
       field.use :addons
     end
-    wrap.use :full_error, wrap_with: { tag: 'p', class: 'help is-danger', html: { data: { navigate_target: 'error' } } }
+    wrap.use :full_error, wrap_with: { tag: 'p', class: 'help is-danger', html: { data: { clear_target: 'error' } } }
   end
 
   # bulma vertical select_form

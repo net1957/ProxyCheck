@@ -13,16 +13,16 @@
       <% else %>
         <%= f.input :name, as: :text, label: 'Script or script URL', placeholder: 'Script or script url', required: true,
                     wrapper: :input_addons,
-                    addons: '<a class="button" data-action="click->navigate#clear_name">Clear</a>' %>
+                    addons: '<a class="button" data-action="click->clear#clear_name">Clear</a>' %>
       <% end %>
       <%= f.input :ip, label: 'IP', placeholder: 'Client IPv4 (default to 127.0.0.1)', required: false %>
       <%= f.input :url, as: :text, label: 'URL(s)', placeholder: 'URL(s) to validate', required: true,
                   wrapper: :input_addons,
-                  addons: '<a class="button" data-action="click->navigate#clear_url">Clear</a>' %>
+                  addons: '<a class="button" data-action="click->clear#clear_url">Clear</a>' %>
       <div class="field">
         <div class="control">
           <%= f.button :submit, 'Run', id: 'url', class: 'is-link',
-                       data: { disable_with: 'Wait...', action: "click->navigate#clear" } %>
+                       data: { disable_with: 'Wait...', action: "click->clear#clear_error" } %>
         </div>
       </div>
     <% end %>

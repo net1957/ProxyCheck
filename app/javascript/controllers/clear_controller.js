@@ -4,7 +4,7 @@ import {Controller} from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["error"]
 
-  clear() {
+  clear_error() {
     this.errorTargets.forEach(
       (el) => {el.remove()}
     )
