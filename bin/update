@@ -40,7 +40,7 @@ chdir APP_ROOT do
   system! 'bin/bundle exec rails git_version'
 
   puts "\n== Generate Documentation to doc/app/index.html =="
-  system 'bundle exec rails redoc_dev'
+  system 'bundle exec rails rdoc'
 
   puts "\n== Removing old logs and tempfiles =="
   system! 'bin/bundle exec rails log:clear tmp:clear'
