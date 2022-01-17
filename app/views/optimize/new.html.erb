@@ -1,10 +1,12 @@
-<turbo-frame id="section_1" data-controller="clear">
-  <section class="section" id="form">
-    <div class="card">
-      <%= render 'form' %>
-    </div>
-  </section>
-</turbo-frame>
+<div data-controller="clear">
+  <turbo-frame id="section_1">
+    <section class="section" id="form">
+      <div class="card">
+        <%= render 'form' %>
+      </div>
+    </section>
+  </turbo-frame>
+</div>
 <footer class="footer">
   <div class="panel">
     <p class="panel-heading">Return a optimized version of the given .pac file. It can replace the original one

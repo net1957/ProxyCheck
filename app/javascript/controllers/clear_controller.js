@@ -11,6 +11,9 @@ export default class extends Controller {
     for (const el of this.element.querySelectorAll(".is-danger")) {
       el.classList.replace("is-danger", "is-success")
     }
+    for (const el of this.element.querySelectorAll("p", ".is-danger")) {
+      el.remove()
+    }
     for (const el of this.element.querySelectorAll(".notification")) {
       el.remove()
     }
