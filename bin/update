@@ -22,6 +22,8 @@ chdir APP_ROOT do
 
   puts "\n== Installing dependencies =="
   system 'gem update --system --no-doc'
+  system 'gem update --no-doc'
+  system 'gem cleanup'
   system 'rbenv rehash'
   system! "bin/bundle config set --local deployment 'true'"
   system! 'bin/bundle config set --local without development:test'
