@@ -8,13 +8,13 @@ module ProxyPacRb
     def encode(string)
       if string.encoding.name == 'ASCII-8BIT'
         data = string.dup
-        data.force_encoding('UTF-8')
+        data.force_encoding('ISO-8859-1').encode('UTF-8', invalid: :replace, undef: :replace)
 
         unless data.valid_encoding?
-          raise(::Encoding::UndefinedConversionError, "Could not encode ASCII-8BIT data #{string.dump} as UTF-8")
+          raise(::Encoding::UndefinedConversionError, "Could not encode ASCII-8BIT data as ISO-8859-1 then to UTF-8: #{string.dump}") # rubocop:disable Layout/LineLength
         end
       else
-        data = string.encode('UTF-8')
+        data = string.encode('UTF-8', invalid: :replace, undef: :replace)
       end
       data
     end
