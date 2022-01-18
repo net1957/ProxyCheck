@@ -47,35 +47,32 @@ SimpleForm.setup do |config|
   # Input
   config.wrappers :vertical_form, tag: 'div', class: 'field' do |field|
     field.use :label, class: 'label'
-
+    field.use :html5
+    field.use :placeholder
+    field.optional :maxlength
+    field.optional :minlength
+    field.optional :pattern
+    field.optional :min_max
+    field.optional :readonly
     field.wrapper tag: 'div', class: 'control' do |control|
-      control.use :html5
       control.use :input, class: 'input', error_class: 'is-danger', valid_class: 'is-success'
-      control.use :placeholder
-      control.optional :maxlength
-      control.optional :minlength
-      control.optional :pattern
-      control.optional :min_max
-      control.optional :readonly
     end
-
     field.use :full_error, wrap_with: { tag: 'p', class: 'help is-danger', html: { data: { navigate_target: 'error' } } }
   end
 
   # input with addons; addons is embedded in a div .control
   config.wrappers :input_addons, class: 'field' do |wrap|
     wrap.use :label, class: 'label'
-
+    wrap.use :html5
+    wrap.use :placeholder
+    wrap.optional :maxlength
+    wrap.optional :minlength
+    wrap.optional :pattern
+    wrap.optional :min_max
+    wrap.optional :readonly
     wrap.wrapper tag: 'div', class: 'field has-addons' do |field|
       field.wrapper tag: 'div', class: 'control is-expanded' do |control|
-        control.use :html5
         control.use :input, class: 'input', error_class: 'is-danger', valid_class: 'is-success'
-        control.use :placeholder
-        control.optional :maxlength
-        control.optional :minlength
-        control.optional :pattern
-        control.optional :min_max
-        control.optional :readonly
       end
       field.use :addons
     end
@@ -437,16 +434,14 @@ SimpleForm.setup do |config|
   #
   config.wrappers :custom_select, tag: 'div', class: 'field' do |field|
     field.use :label, class: 'label'
-
+    field.use :html5
+    field.use :placeholder
+    field.optional :readonly
     field.wrapper tag: 'div', class: 'control' do |control|
       control.wrapper tag: 'div', class: 'select' do |select|
-        select.use :html5
         select.use :input, class: 'input', error_class: 'is-danger', valid_class: 'is-success'
-        select.use :placeholder
-        select.optional :readonly
       end
     end
-
     field.use :full_error, wrap_with: { tag: 'p', class: 'help is-danger' }
     # field.optional :hint, wrap_with: { tag: 'p', class: 'help' }
   end
