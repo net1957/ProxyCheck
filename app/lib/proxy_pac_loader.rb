@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-# Our ProxyPacLoader without File loader and patched version of ProxyPacUri1Loader
+# Our ProxyPacLoader without File loader and patched version of ProxyPacUriLoader
 class ProxyPacLoader < ProxyPacRb::ProxyPacLoader
   def initialize
     super
     @loaders = []
     @loaders << ProxyPacRb::ProxyPacStringLoader.new
-    @loaders << ProxyPacUri1Loader.new
+    @loaders << ProxyPacUriLoader.new
     @loaders << ProxyPacNullLoader.new
 
     @default_loader = -> { ProxyPacNullLoader.new }
@@ -22,9 +22,9 @@ class ProxyPacNullLoader < ProxyPacRb::ProxyPacNullLoader
   end
 end
 
-# our ProxyPacUriLoader monkey patch to encode the response
+# our ProxyPacUrLoader monkey patch to encode the response
 # TODO: added encode as monkey patch
-class ProxyPacUri1Loader < ProxyPacRb::ProxyPacUriLoader
+class ProxyPacUriLoader < ProxyPacRb::ProxyPacUriLoader
   include ProxyPacRb::Encoding
   def load(proxy_pac)
     proxy_pac.content = encode(download_proxy_pac(proxy_pac.source.to_s))
