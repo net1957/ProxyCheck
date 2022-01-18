@@ -29,7 +29,7 @@ module Forms
       parser.find(url)
     end
 
-    # @return [ProxyPacRb::ProxyPacxxx]
+    # @return [ProxyPacRb::ProxyPacFile]
     # memoize it
     def parser
       @parser ||= Parser.new.call(name: name, ip: ip)
@@ -43,12 +43,11 @@ module Forms
     # validate that ip is a valid IPV4 address
     # @return [Binary] true or false
     def ip_valid?
-      return true if ip.blank?
+      return if ip.blank?
 
-      IPAddr.new(ip.strip, Socket::AF_INET) && true
+      IPAddr.new(ip.strip, Socket::AF_INET)
     rescue IPAddr::InvalidAddressError, IPAddr::AddressFamilyError
       errors.add(:ip, :invalid)
-      false
     end
 
     def proxies_fixed?
