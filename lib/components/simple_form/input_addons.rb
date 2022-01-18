@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # custom component
-# permit to pass a html string wrapped bay a  div .control
+# permit to pass a html string wrapped by a div .control
 module InputAddons
   def addons(_wrapper_options = nil)
     # INFO: security: we assume that options[:addons] is not a user input
