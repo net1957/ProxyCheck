@@ -1,6 +1,7 @@
 import {Controller} from "@hotwired/stimulus"
 
 // remove all errors dom attributes
+// clear some ID
 export default class extends Controller {
   static targets = ["error"]
 

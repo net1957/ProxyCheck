@@ -9,6 +9,5 @@ class Parser
     env = ip.blank? ? ProxyPacRb::Environment.new : ProxyPacRb::Environment.new(client_ip: ip)
     ProxyPacParser.new(environment: env)
                   .parse(name)
-    #             .tap { |script| Rails.logger.debug { script.inspect } }
   end
 end
