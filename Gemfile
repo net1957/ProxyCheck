@@ -16,7 +16,7 @@ gem 'simple_form', '~>5.0'
 gem 'hashie', '~>5.0'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0.0'
+gem 'rails', '~> 7.0.2'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -58,5 +58,5 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
   # Use Puma as the app server
-  gem 'puma', '~> 5.3'
+  gem 'puma', '~> 5.6', '>=5.6.2'
 end
