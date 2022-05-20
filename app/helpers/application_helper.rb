@@ -7,7 +7,7 @@ module ApplicationHelper
   end
 
   def top_logo
-    ENV['LOGO'] || 'logo_empty.png'
+    ENV.fetch('LOGO', 'logo_empty.png')
   end
 
   def compress?
