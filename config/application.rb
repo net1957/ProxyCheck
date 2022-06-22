@@ -35,6 +35,9 @@ module ProxyCheck
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    # to allow nginx gzip_min_length directive to work
+    config.middleware.use(Rack::ContentLength)
+
     # Don't generate system test files.
     config.generators.system_tests = nil
   end
