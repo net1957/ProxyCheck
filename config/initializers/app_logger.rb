@@ -4,7 +4,7 @@
 # see https://omohikane.com/rails_disable_request_log/
 class AppLogger < Rails::Rack::Logger
   def call(env)
-    %r{/health}i.match?(env['REQUEST_PATH']) ? Rails.logger.silence { super } : super
+    %r{/health}i.match?(env['PATH_INFO']) ? Rails.logger.silence { super } : super
   end
 
   Rails.application.config.middleware.swap Rails::Rack::Logger, AppLogger
