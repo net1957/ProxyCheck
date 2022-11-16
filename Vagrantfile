@@ -13,7 +13,7 @@ Vagrant.configure('2') do |config|
   end
   config.vm.provision 'shell', inline: <<-SHELL
     # for nodejs repository
-    curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
     # for yarn repository
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
@@ -28,7 +28,7 @@ Vagrant.configure('2') do |config|
                             nodejs yarn
     # cleanup
     sudo apt-get autoremove -y
-    sudo apt-get autoclean -y
+    sudo apt-get clean -y
   SHELL
 
   config.vm.provision :shell, privileged: false, inline: <<~SCRIPT
