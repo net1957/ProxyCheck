@@ -58,5 +58,5 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
   # Use Puma as the app server
-  gem 'puma', '~> 5.6'
+  gem 'puma'
 end
