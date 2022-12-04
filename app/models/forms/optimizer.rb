@@ -29,7 +29,7 @@ module Forms
     # @return [ProxyPacRb::ProxyPacxxx]
     # memoize it
     def script
-      @script ||= Parser.new.call(name: name)
+      @script ||= Parser.new.call(name:)
     end
 
     # validate the script

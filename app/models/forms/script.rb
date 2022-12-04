@@ -32,7 +32,7 @@ module Forms
     # @return [ProxyPacRb::ProxyPacFile]
     # memoize it
     def parser
-      @parser ||= Parser.new.call(name: name, ip: ip)
+      @parser ||= Parser.new.call(name:, ip:)
     end
 
     # validate the script
