@@ -9,7 +9,7 @@ module AppVersion
   # minor version
   MINOR = 5
   # tiny version
-  TINY = 29
+  TINY = 30
 
   # @return [String] version string
   def self.to_s
