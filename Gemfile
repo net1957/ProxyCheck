@@ -7,6 +7,8 @@ ruby '~>3.1.3'
 
 # for proxy
 gem 'mini_racer', '~>0.6.0'
+# gem 'mini_racer', github: 'rubyjs/mini_racer', branch: 'libv8-node-18'
+
 gem 'proxy_pac_rb', github: 'net1957/proxy_pac_rb', branch: 'miniracer'
 
 # for forms

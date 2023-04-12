@@ -79,7 +79,7 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    addressable (2.8.1)
+    addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     bindex (0.8.1)
@@ -92,7 +92,7 @@ GEM
     cssbundling-rails (1.1.2)
       railties (>= 6.0.0)
     date (3.3.3)
-    debug (1.7.1)
+    debug (1.7.2)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     erubi (1.12.0)
@@ -107,11 +107,11 @@ GEM
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.6.0)
-    irb (1.6.3)
+    irb (1.6.4)
       reline (>= 0.3.0)
     json (2.6.3)
     libv8-node (16.10.0.0-x86_64-linux)
-    loofah (2.19.1)
+    loofah (2.20.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.8.1)
@@ -125,7 +125,7 @@ GEM
     mini_racer (0.6.3)
       libv8-node (~> 16.10.0.0)
     minitest (5.18.0)
-    msgpack (1.6.1)
+    msgpack (1.7.0)
     net-imap (0.3.4)
       date
       net-protocol
@@ -135,16 +135,16 @@ GEM
       timeout
     net-smtp (0.3.3)
       net-protocol
-    nio4r (2.5.8)
-    nokogiri (1.14.2-x86_64-linux)
+    nio4r (2.5.9)
+    nokogiri (1.14.3-x86_64-linux)
       racc (~> 1.4)
     parallel (1.22.1)
-    parser (3.2.1.1)
+    parser (3.2.2.0)
       ast (~> 2.4.1)
     psych (5.1.0)
       stringio
     public_suffix (5.0.1)
-    puma (6.1.1)
+    puma (6.2.1)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.6.4)
@@ -181,25 +181,25 @@ GEM
     rdoc (6.5.0)
       psych (>= 4.0.0)
     regexp_parser (2.7.0)
-    reline (0.3.2)
+    reline (0.3.3)
       io-console (~> 0.5)
     rexml (3.2.5)
-    rubocop (1.48.1)
+    rubocop (1.50.1)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.2.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml (>= 3.2.5, < 4.0)
-      rubocop-ast (>= 1.26.0, < 2.0)
+      rubocop-ast (>= 1.28.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.27.0)
+    rubocop-ast (1.28.0)
       parser (>= 3.2.1.0)
-    rubocop-performance (1.16.0)
+    rubocop-performance (1.17.1)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
-    rubocop-rails (2.18.0)
+    rubocop-rails (2.19.0)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
@@ -265,7 +265,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.1.3p185
+   ruby 3.1.4p223
 
 BUNDLED WITH
-   2.4.8
+   2.4.12
