@@ -6,8 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '~>3.2.2'
 
 # for proxy
-gem 'mini_racer', '~>0.6.0'
-# gem 'mini_racer', github: 'rubyjs/mini_racer', branch: 'libv8-node-18'
+gem 'mini_racer', '~>0.8.0'
 
 gem 'proxy_pac_rb', github: 'net1957/proxy_pac_rb', branch: 'miniracer'
 
