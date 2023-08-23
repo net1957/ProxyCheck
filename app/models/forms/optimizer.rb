@@ -11,9 +11,9 @@ module Forms
     attr_reader :result
 
     validates :name, presence: true, unless: :proxies_fixed?
-    validates :name, inclusion: { in: proc { ProxyList.all.map(&:value) } }, if: :proxies_fixed?
-    validate :script_valid?, if: ->(e) { e.errors.empty? }
-    validate :optimize, if: ->(e) { e.errors.empty? }
+    validates :name, inclusion: { in: ProxyList.all.map(&:value) }, if: :proxies_fixed?
+    validate :script_valid?, if: -> { errors.empty? }
+    validate :optimize, if: -> { errors.empty? }
 
     # Set @return to compressed script
     # @return [String] compressed script

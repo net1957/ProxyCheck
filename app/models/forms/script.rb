@@ -11,9 +11,9 @@ module Forms
 
     validate :ip_valid?
     validates :name, presence: true, unless: :proxies_fixed?
-    validates :name, inclusion: { in: proc { ProxyList.all.map(&:value) } }, if: :proxies_fixed?
+    validates :name, inclusion: { in: ProxyList.all.map(&:value) }, if: :proxies_fixed?
     validates :url, presence: true
-    validate :script_valid?, if: ->(e) { e.errors.empty? }
+    validate :script_valid?, if: -> { errors.empty? }
 
     # @return [Array] of Hash(url:, result:)
     def proxies
@@ -43,7 +43,7 @@ module Forms
     # validate that ip is a valid IPV4 address
     # @return [Binary] true or false
     def ip_valid?
-      return if ip.blank?
+      return true if ip.blank?
 
       IPAddr.new(ip.strip, Socket::AF_INET)
     rescue IPAddr::InvalidAddressError, IPAddr::AddressFamilyError
