@@ -6,14 +6,20 @@
 RUBY_V = File.read('./.ruby-version').chomp
 Vagrant.configure('2') do |config|
   config.vm.box = 'bento/debian-10'
-  config.vm.network 'forwarded_port', guest: 3000, host: 8080, host_ip: 'localhost'
+  config.vm.network 'forwarded_port', guest: 3000, host: 3001, host_ip: 'localhost'
   # change to 'virtualbox' if you use it in place of vmware
   config.vm.provider 'vmware_desktop' do |vb|
     vb.memory = '1024'
+    vb.gui = true
   end
   config.vm.provision 'shell', inline: <<-SHELL
     # for nodejs repository
-    curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+    # see https://github.com/nodesource/distributions#debian-and-ubuntu-based-distributions
+    sudo apt-get install -y ca-certificates curl gnupg
+    sudo mkdir -p /etc/apt/keyrings
+    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+    NODE_MAJOR=20
+    echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee cd /vagrant
     # for yarn repository
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
