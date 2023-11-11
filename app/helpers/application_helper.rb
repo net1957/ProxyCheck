@@ -15,6 +15,6 @@ module ApplicationHelper
   end
 
   def proxy_list
-    ProxyList.all
+    ProxyList.entries
   end
 end

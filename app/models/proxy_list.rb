@@ -4,7 +4,7 @@
 class ProxyList
   class << self
     # @return [Array] of Smash (memoized)
-    def all
+    def entries
       @all = load_records unless defined?(@all)
       @all
     end

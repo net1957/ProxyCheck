@@ -11,7 +11,7 @@ module Forms
     attr_reader :result
 
     validates :name, presence: true, unless: :proxies_fixed?
-    validates :name, inclusion: { in: ProxyList.all.map(&:value) }, if: :proxies_fixed?
+    validates :name, inclusion: { in: ProxyList.entries.map(&:value) }, if: :proxies_fixed?
     validate :script_valid?, if: -> { errors.empty? }
     validate :optimize, if: -> { errors.empty? }
 
@@ -38,7 +38,7 @@ module Forms
     end
 
     def proxies_fixed?
-      ProxyList.all.any?
+      ProxyList.entries.any?
     end
   end
 end
