@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '~>3.2.2'
+ruby '~>3.3.0'
 
 # for proxy
 gem 'mini_racer', '~>0.8.0'
