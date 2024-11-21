@@ -6,7 +6,7 @@
 # components.
 # See https://github.com/heartcombo/simple_form#custom-components
 # to know more about custom components.
-Dir[Rails.root.join('lib/components/simple_form/**/*.rb')].each { |f| require f }
+Rails.root.glob('lib/components/simple_form/**/*.rb').each { |f| require f }
 
 # rubocop:disable Metrics/BlockLength, Layout/LineLength
 SimpleForm.setup do |config|
