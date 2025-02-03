@@ -7,9 +7,9 @@ module AppVersion
   # major version
   MAJOR = 0
   # minor version
-  MINOR = 6
+  MINOR = 7
   # tiny version
-  TINY = 1
+  TINY = 0
 
   # @return [String] version string
   def self.to_s
