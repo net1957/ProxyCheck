@@ -1,10 +1,1 @@
 // project specifics
-
-// see https://github.com/jgthms/bulma/issues/2503
-// only needed on IE11 and Edge
-// work only if is-boxed is added to navbar-dropdown
-.navbar-item.is-hoverable:hover .navbar-dropdown.is-boxed {
-  opacity: 1 !important;
-  pointer-events: auto;
-  transform: translateY(0);
-}

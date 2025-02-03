@@ -1,23 +1,13 @@
-@charset "utf-8";
-
-// 1. Import the initial variables
-@import "bulma/sass/utilities/initial-variables";
-// @import "bulma/sass/utilities/functions";
-// 2. Initials variables
+// set our variables
 $hutch: #142559;
-// 3. Derived variables
 
-$text: $hutch;
-$text-strong: $hutch;
-$primary: $hutch;
+// Path to Bulma's sass folder
+@use "bulma/sass" with (
+  $text: $hutch,
+  $text-strong: $hutch,
+  $primary: $hutch,
+  $link: $hutch,
+);
 
-$link: $hutch;
-
-$navbar-item-hover-color: $grey-dark;
-$navbar-item-active-background-color: $grey-lighter;
-
-// 6. Import the rest of Bulma
-// $variable-columns: false; // see https://github.com/jgthms/bulma/issues/1190
-@import "bulma/bulma";
 // import project specifics
-@import "app";
+@use "app";
