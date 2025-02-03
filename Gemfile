@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '~>3.4.1'
 
 # for proxy
-gem 'mini_racer', '~>0.8.0'
+gem 'mini_racer', '~>0.16.0'
 
 gem 'proxy_pac_rb', github: 'net1957/proxy_pac_rb', branch: 'miniracer'
 
@@ -42,6 +42,10 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # bundle exec rails redoc_dev generates the API under doc/app.
 gem 'sdoc', group: :doc
+
+# TODO: check if needed in future gems update
+# gems suppressed from standard library in ruby 3.5.0 (to suppress deprecation warning at startup)
+gem 'ostruct'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
