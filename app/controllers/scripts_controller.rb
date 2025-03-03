@@ -16,6 +16,6 @@ class ScriptsController < ApplicationController
   attr_reader :script
 
   def script_params
-    params.require(:forms_script).permit(:ip, :name, :action, :url)
+    params.expect(forms_script: %i[ip name action url])
   end
 end

@@ -1,0 +1,21 @@
+plugins:
+  - rubocop-performance
+  - rubocop-rails
+
+Layout/EndOfLine:
+  Enabled: false
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.3
+  Exclude:
+    - node_modules/**/*
+    - db/**/*.rb
+    - test/**/*
+    - bin/**/*
+    - config/initializers/simple_form_foundation.rb
+    - Vagrantfile
+Rails:
+  Enabled: true
+
+inherit_from: .rubocop_todo.yml

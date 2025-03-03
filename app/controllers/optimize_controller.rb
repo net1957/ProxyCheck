@@ -18,7 +18,7 @@ class OptimizeController < ApplicationController
   attr_reader :optimizer
 
   def optimize_params
-    params.require(:forms_optimizer).permit(:name)
+    params.expect(forms_optimizer: [:name])
   end
 
   def allowed?
