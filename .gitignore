@@ -33,6 +33,7 @@ brakeman.*
 git_version
 .vagrant
 .sass-cache
+.gem_rbs_collection
 
 /app/assets/images/logo.png
 
