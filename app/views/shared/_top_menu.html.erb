@@ -11,6 +11,24 @@
 </div>
 
 <div class="navbar-end">
+  <div class="navbar-item has-dropdown is-hoverable is-right">
+    <div class="navbar-link">Theme</div>
+    <div class="navbar-dropdown is-right">
+      <div class="navbar-item" data-controller="theme">
+        <div class="control">
+          <div class="select">
+            <label>
+              <select class="select" name="theme_select" data-theme-target="themeBtn" data-action="click->theme#toggle">
+                <option value="auto">auto</option>
+                <option value="dark">dark</option>
+                <option value="light">light</option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="navbar-item has-dropdown is-hoverable">
     <a class="navbar-link">Help</a>
     <div class="navbar-dropdown is-boxed is-right">
