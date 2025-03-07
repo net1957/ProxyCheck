@@ -11,9 +11,9 @@ Proxy scripts are well described here: https://en.wikipedia.org/wiki/Proxy_auto-
 ==INSTALLATION
 
 
-ProxyCheck is a Rails 7 application and all rails prerequisites applies.
+ProxyCheck is a Rails 8 application and all rails prerequisites applies.
 
-Node.js, Yarn, Git and Ruby 3.0 or higher should be installed on the system.
+Node.js, Yarn, Git and Ruby 3.3 or higher should be installed on the system.
 
 Clone this repository and install gems:
 
@@ -34,7 +34,7 @@ or with scripts (mainly for prod):
 It should work on all nix systems, but not on windows due to the lack of support by the libv8-node gem used by
 mini_racer gem.
 
-You can use Vagrant to test it. A Vagrantfile based on debian-10 and ruby 3.0 is provided.
+You can use Vagrant to test it. A Vagrantfile based on debian-12 and ruby 3.3 is provided.
 
 ==CONFIGURATION
 
@@ -81,7 +81,7 @@ You can also compress your script by using the optimize menu entry and save the 
 
 ==CREDITS
 
-This application is build on top of the proxy_pac_rb gem. 
+This application is build on top of the proxy_pac_rb gem.
 
 ==LINKS
 
