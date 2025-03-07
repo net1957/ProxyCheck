@@ -124,7 +124,7 @@ GEM
       reline (>= 0.4.2)
     json (2.10.1)
     language_server-protocol (3.17.0.4)
-    libv8-node (18.19.0.0-x86_64-linux)
+    libv8-node (23.6.1.0-x86_64-linux)
     lint_roller (1.1.0)
     logger (1.6.6)
     loofah (2.24.0)
@@ -137,8 +137,8 @@ GEM
       net-smtp
     marcel (1.0.4)
     mini_mime (1.1.5)
-    mini_racer (0.16.0)
-      libv8-node (~> 18.19.0.0)
+    mini_racer (0.18.0)
+      libv8-node (~> 23.6.1.0)
     minitest (5.25.4)
     net-imap (0.5.6)
       date
@@ -167,7 +167,7 @@ GEM
     puma (6.6.0)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (3.1.10)
+    rack (3.1.11)
     rack-session (2.1.0)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
@@ -211,7 +211,7 @@ GEM
     regexp_parser (2.10.0)
     reline (0.6.0)
       io-console (~> 0.5)
-    rubocop (1.73.1)
+    rubocop (1.73.2)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -284,7 +284,7 @@ DEPENDENCIES
   debug
   hashie (~> 5.0)
   importmap-rails
-  mini_racer (~> 0.16.0)
+  mini_racer (~> 0.18.0)
   nokogiri (>= 1.6.7, < 1.18)
   ostruct
   proxy_pac_rb!

@@ -8,7 +8,7 @@ ruby file: '.ruby-version'
 gem 'nokogiri', '>=1.6.7', '<1.18'
 
 # for proxy
-gem 'mini_racer', '~>0.16.0'
+gem 'mini_racer', '~>0.18.0'
 
 gem 'proxy_pac_rb', github: 'net1957/proxy_pac_rb', branch: 'miniracer'
 
