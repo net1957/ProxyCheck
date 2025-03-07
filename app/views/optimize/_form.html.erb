@@ -7,7 +7,7 @@
   <div class="content">
     <%= simple_form_for @optimizer, wrapper: :vertical_form, url: optimize_path, html: { id: 'compress_form', data: { turbo: false } } do |f| %>
       <%= f.error_notification %>
-      <% if proxy_list.any? %>
+      <% if proxy_list&.any? %>
         <%= f.input :name, collection: proxy_list, label_method: :label, value_method: :value, label: 'Name', required: true, prompt: 'select proxy to use' %>
       <% else %>
         <%= f.input :name, as: :text, label: 'Script or script URL', placeholder: 'Script or script url', required: true %>
