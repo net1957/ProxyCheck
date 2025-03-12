@@ -5,6 +5,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby file: '.ruby-version'
 
+gem 'json', '>= 2.10.2'
+
 gem 'nokogiri', '>=1.6.7', '<1.18'
 
 # for proxy
