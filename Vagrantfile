@@ -53,12 +53,11 @@ Vagrant.configure('2') do |config|
     export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
     eval "$(rbenv init -)"
-    if [ ! -e .rbenv/versions/#{RUBY_V} ]; then
-      rbenv install #{RUBY_V}
-      rbenv global #{RUBY_V}
-      gem update --system --no-doc
-      rbenv rehash
-    fi
+    rbenv install #{RUBY_V}
+    rbenv global #{RUBY_V}
+    gem update --system --no-doc
+    rbenv rehash
+
     cd /vagrant
     # if [ ! -e /home/vagrant/.rbenv/shims/bundle ]; then
       gem update --system --no-doc
