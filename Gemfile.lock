@@ -124,7 +124,7 @@ GEM
       reline (>= 0.4.2)
     json (2.10.2)
     language_server-protocol (3.17.0.4)
-    libv8-node (23.6.1.0-x86_64-linux)
+    libv8-node (18.19.0.0-x86_64-linux)
     lint_roller (1.1.0)
     logger (1.7.0)
     loofah (2.24.0)
@@ -137,8 +137,8 @@ GEM
       net-smtp
     marcel (1.0.4)
     mini_mime (1.1.5)
-    mini_racer (0.18.1)
-      libv8-node (~> 23.6.1.0)
+    mini_racer (0.16.0)
+      libv8-node (~> 18.19.0.0)
     minitest (5.25.5)
     net-imap (0.5.6)
       date
@@ -287,7 +287,7 @@ DEPENDENCIES
   hashie (~> 5.0)
   importmap-rails
   json (>= 2.10.2)
-  mini_racer (~> 0.18.0)
+  mini_racer (~> 0.16.0)
   nokogiri (>= 1.6.7, < 1.18)
   ostruct
   proxy_pac_rb!
