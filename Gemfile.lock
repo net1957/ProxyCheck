@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/net1957/proxy_pac_rb.git
-  revision: eaad086b58fffd8fdec32e6fa480a58f339595be
+  revision: 150bd49285adfa78756081339c3dc7b0d9492e37
   branch: miniracer
   specs:
     proxy_pac_rb (3.0.0)
@@ -305,7 +305,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.3.7p123
+   ruby 3.3.8p144
 
 BUNDLED WITH
-   2.6.5
+   2.6.7
