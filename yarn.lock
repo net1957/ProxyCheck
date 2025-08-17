@@ -7,13 +7,13 @@
   resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.2.2.tgz#071aab59c600fed95b97939e605ff261a4251608"
   integrity sha512-eGeIqNOQpXoPAIP7tC1+1Yc1yl1xnwYqg+3mzqxyrbE5pg5YFBZcA6YoTiByJB6DKAEsiWtl6tjTJS4IYtbB7A==
 
-"@hotwired/turbo-rails@^8.0.13":
-  version "8.0.13"
-  resolved "https://registry.yarnpkg.com/@hotwired/turbo-rails/-/turbo-rails-8.0.13.tgz#7016651f7144053992ce5096bb95495f8faa5854"
-  integrity sha512-6SCnnOSzhtaJ0pNkAjncZxjtKsK3sP/vPEkCnTXBXSHkr+vF7DTZkOlwjhms1DbbQNTsjCsBoKvzSMbh/omSCQ==
+"@hotwired/turbo-rails@^8.0.16":
+  version "8.0.16"
+  resolved "https://registry.yarnpkg.com/@hotwired/turbo-rails/-/turbo-rails-8.0.16.tgz#096f3bec8c3c04d4aac4dd0f75305c67b3db3501"
+  integrity sha512-Yxiy2x+N3eOIEDokvLzSrd08aI5RDKnFYDQFl2J/LuMEWTtPdY7oNP0F/gv/sSe5AV23Lwz4FitG/uNFXNM5tA==
   dependencies:
     "@hotwired/turbo" "^8.0.13"
-    "@rails/actioncable" "^7.0"
+    "@rails/actioncable" ">=7.0"
 
 "@hotwired/turbo@^8.0.13":
   version "8.0.13"
@@ -109,10 +109,10 @@
     "@parcel/watcher-win32-ia32" "2.5.1"
     "@parcel/watcher-win32-x64" "2.5.1"
 
-"@rails/actioncable@^7.0":
-  version "7.2.201"
-  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.2.201.tgz#bfb3da01b3e2462f5a18f372c52dedd7de76037f"
-  integrity sha512-wsTdWoZ5EfG5k3t7ORdyQF0ZmDEgN4aVPCanHAiNEwCROqibSZMXXmCbH7IDJUVri4FOeAVwwbPINI7HVHPKBw==
+"@rails/actioncable@>=7.0":
+  version "8.0.201"
+  resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-8.0.201.tgz#f5ac6bfa3ac6f52f8a1c37b2661b66a61d4442e4"
+  integrity sha512-WiXZodvnK7u+wlu72DZydfV75x14HhzXI84sto9xcdsW1DMOHK+jYwQuuE/Wh/hKH5yajFIw/3DUP6MHDeGrbA==
 
 braces@^3.0.3:
   version "3.0.3"
@@ -190,10 +190,10 @@ readdirp@^4.0.1:
   resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-4.1.2.tgz#eb85801435fbf2a7ee58f19e0921b068fc69948d"
   integrity sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg==
 
-sass@^1.87.0:
-  version "1.87.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.87.0.tgz#8cceb36fa63fb48a8d5d7f2f4c13b49c524b723e"
-  integrity sha512-d0NoFH4v6SjEK7BoX810Jsrhj7IQSYHAHLi/iSpgqKc7LaIDshFRlSg5LOymf9FqQhxEHs2W5ZQXlvy0KD45Uw==
+sass@^1.90.0:
+  version "1.90.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.90.0.tgz#d6fc2be49c7c086ce86ea0b231a35bf9e33cb84b"
+  integrity sha512-9GUyuksjw70uNpb1MTYWsH9MQHOHY6kwfnkafC24+7aOMZn9+rVMBxRbLvw756mrBFbIsFg6Xw9IkR2Fnn3k+Q==
   dependencies:
     chokidar "^4.0.0"
     immutable "^5.0.2"
