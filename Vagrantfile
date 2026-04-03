@@ -16,7 +16,7 @@ Vagrant.configure('2') do |config|
     # for nodejs repository
     # see https://github.com/nodesource/distributions#debian-and-ubuntu-based-distributions
     sudo apt-get install -y ca-certificates curl gnupg
-    NODE_MAJOR=22
+    NODE_MAJOR=24
     curl -fsSL https://deb.nodesource.com/setup_$NODE_MAJOR.x -o nodesource_setup.sh
     sudo -E bash nodesource_setup.sh
     # for yarn repository
