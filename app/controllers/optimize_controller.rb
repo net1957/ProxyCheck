@@ -10,7 +10,7 @@ class OptimizeController < ApplicationController
 
   def create
     @optimizer = Forms::Optimizer.new(optimize_params)
-    optimizer.valid? ? send_data(optimizer.result, filename: 'proxy.pac') : render(:new, status: :unprocessable_entity)
+    optimizer.valid? ? send_data(optimizer.result, filename: 'proxy.pac') : render(:new, status: :unprocessable_content)
   end
 
   private

@@ -8,7 +8,7 @@ class ScriptsController < ApplicationController
 
   def create
     @script = Forms::Script.new(script_params)
-    script.valid? ? render(status: :ok) : render(:new, status: :unprocessable_entity)
+    script.valid? ? render(status: :ok) : render(:new, status: :unprocessable_content)
   end
 
   private
