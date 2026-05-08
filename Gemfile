@@ -7,8 +7,6 @@ ruby file: '.ruby-version'
 
 gem 'json', '>= 2.10.2'
 
-gem 'nokogiri', '>=1.6.7', '<1.18'
-
 # for proxy
 gem 'mini_racer', '~>0.20'
 
