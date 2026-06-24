@@ -1,0 +1,50 @@
+# rubocop:disable all
+module ProxyPacRb
+  class Environment
+    def initialize(*args); end
+  end
+
+  class Parser
+    attr_reader :script
+
+    def initialize(*args); end
+
+    def parse(script)
+      @script = script
+      self
+    end
+
+    def find(*_args)
+      'fake DIRECT'
+    end
+
+    def valid
+      @script.include?('function FindProxyForURL(url, host)')
+    end
+
+    def message
+      'fake parser'
+    end
+  end
+
+  class ProxyPacLoader
+  end
+
+  class ProxyPacNullLoader
+  end
+
+  class ProxyPacStringLoader
+  end
+
+  class ProxyPacUriLoader
+  end
+
+  class ProxyPacCompressor
+    def initialize(*args); end
+
+    def compress(script)
+      script.script
+    end
+  end
+end
+# rubocop:enable all

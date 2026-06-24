@@ -1,4 +1,3 @@
-
 GIT
   remote: https://github.com/net1957/proxy_pac_rb.git
   revision: 150bd49285adfa78756081339c3dc7b0d9492e37
@@ -317,4 +316,4 @@ RUBY VERSION
   ruby 4.0.5
 
 BUNDLED WITH
-  4.0.11
+  4.0.15
