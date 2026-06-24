@@ -5,11 +5,11 @@
 
 RUBY_V = File.read('./.ruby-version').chomp
 Vagrant.configure('2') do |config|
-  config.vm.box = 'bento/debian-12'
-  config.vm.network 'forwarded_port', guest: 3000, host: 3030, host_ip: 'localhost'
+  config.vm.box = 'bento/debian-13'
+  config.vm.network 'forwarded_port', guest: 3000, host: 3001, host_ip: 'localhost'
   # change to 'virtualbox' if you use it in place of vmware
   config.vm.provider 'vmware_desktop' do |vb|
-    vb.memory = '1024'
+    vb.memory = '2048'
     vb.gui = false
   end
   config.vm.provision 'shell', inline: <<-SHELL
@@ -19,9 +19,6 @@ Vagrant.configure('2') do |config|
     NODE_MAJOR=24
     curl -fsSL https://deb.nodesource.com/setup_$NODE_MAJOR.x -o nodesource_setup.sh
     sudo -E bash nodesource_setup.sh
-    # for yarn repository
-    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
     # update the apt repositories
     sudo apt-get update
     # update the system
@@ -30,7 +27,9 @@ Vagrant.configure('2') do |config|
     sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev \
                             libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev \
                             libcurl4-openssl-dev libffi-dev \
-                            nodejs yarn
+                            nodejs
+    # install yarn
+    npm install -g yarn@1.22.22
     # cleanup
     sudo apt-get autoremove -y
     sudo apt-get clean -y
